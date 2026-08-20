@@ -1,0 +1,38 @@
+# Sevalla static-site redirects.
+# https://docs.sevalla.com/static-sites/redirects  (verified 2026-08-20)
+#
+# Sevalla reads this file from the root of the published directory. Rules are
+# applied top to bottom and the FIRST match wins, so the domain-level rule has
+# to come before the path rules or www would be served rather than redirected.
+#
+# Supported here: 301, 302, 200 (rewrite), and a "!" suffix to force a rule even
+# when a real file exists at that path.
+
+# --- www -> apex ----------------------------------------------------------
+# laytr.app is the one canonical Laytr domain. Serving both hosts would split
+# search ranking and widen cookie scope, so www is a permanent redirect and
+# never an origin of its own.
+#
+# Sevalla's _redirects matches a full URL including the hostname, which is why
+# this belongs here rather than in host configuration. Both laytr.app AND
+# www.laytr.app must still be added as domains in the Sevalla dashboard, each
+# with its own DNS record and its own certificate, or this rule never runs
+# because nothing terminates TLS for www (website/README.md §10).
+https://www.laytr.app/*   https://laytr.app/:splat   301!
+
+# --- canonical paths ------------------------------------------------------
+# The .html forms are reachable because the host serves them; send them to the
+# clean URL so one page never has two live addresses.
+/index.html      /            301
+/privacy.html    /privacy     301
+/terms.html      /terms       301
+/support.html    /support     301
+/welcome.html    /welcome     301
+
+# --- aliases people and documents actually type ---------------------------
+/privacy-policy  /privacy     301
+/policy          /privacy     301
+/tos             /terms       301
+/eula            /terms       301
+/help            /support     301
+/contact         /support     301

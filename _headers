@@ -1,0 +1,29 @@
+# Sevalla static-site response headers.
+# https://docs.sevalla.com/static-sites/  (verified 2026-08-20)
+#
+# Read from the root of the published directory. Rules matching the same path
+# are merged. A few platform-managed headers (Content-Encoding, Server,
+# Transfer-Encoding) cannot be overridden and are not attempted here.
+
+/*
+  # The site is entirely self-hosted: no CDN scripts, no web fonts, no
+  # analytics, no embeds. That makes a strict policy free to adopt, and it is
+  # the same promise the app makes -- nothing here phones anywhere.
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'none'; manifest-src 'self'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  # No browser feature on this site needs any of these.
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), interest-cohort=(), microphone=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  # Two years, with preload. Only safe because laytr.app is HTTPS-only and
+  # every subdomain will be too. Read website/README.md before changing it:
+  # HSTS is hard to walk back.
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+# Fingerprint-free asset paths, so these are revalidated rather than pinned
+# forever. Screens and brand art change only when the app does.
+/assets/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/assets/screens/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

@@ -1,0 +1,5 @@
+# laytr.app
+User-agent: *
+Allow: /
+
+Sitemap: https://laytr.app/sitemap.xml
