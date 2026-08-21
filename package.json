@@ -1,0 +1,10 @@
+{
+  "name": "laytr-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The published laytr.app website. Generated - see README.md.",
+  "scripts": {
+    "build": "echo 'Nothing to build: this repository already contains the built site.'",
+    "start": "echo 'Static site. Serve the repository root.'"
+  }
+}
