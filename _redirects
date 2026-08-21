@@ -1,10 +1,9 @@
 https://www.laytr.app/*   https://laytr.app/:splat   301!
 
-/index.html      /            301
-/privacy.html    /privacy     301
-/terms.html      /terms       301
-/support.html    /support     301
-/welcome.html    /welcome     301
+/privacy    /privacy.html    200
+/terms      /terms.html      200
+/support    /support.html    200
+/welcome    /welcome.html    200
 
 /privacy-policy  /privacy     301
 /policy          /privacy     301
