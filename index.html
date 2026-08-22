@@ -9,7 +9,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="0479f5f2f64f">
+<meta name="laytr-build" content="72bf4edc65b5">
 
 
 <meta property="og:type" content="website">
@@ -68,8 +68,8 @@
     <h1 class="display hero__display">Save&nbsp;now. Come&nbsp;back Laytr.</h1>
 
     <p class="lede hero__lede">
-      A private inbox for everything you mean to return to. Save it from any
-      app, say when you want it back, and it comes back &mdash; exactly then.
+      Save anything from any app. Say when you want it back. It comes back
+      &mdash; exactly then.
     </p>
 
     <!-- The call to action, in the only three honest states there are.
@@ -88,10 +88,8 @@
   
 </div>
 
-<p class="footnote muted" style="margin-top:var(--s-m);max-width:34rem">
-  Laytr is finished and in release testing. This page is the product it
-  describes &mdash; every claim on it is behaviour that already ships. When the
-  App&nbsp;Store listing is live, the link appears here.
+<p class="footnote muted" style="margin-top:var(--s-m);max-width:30rem">
+  In release testing. The link appears here when the listing is live.
 </p>
 
 
@@ -103,50 +101,35 @@
   </section>
 
   <!-- ===================================================================
-       The problem
+       The problem — one thought, not an essay
        =================================================================== -->
   <section class="section shell relative">
     <span class="serial" aria-hidden="true">01</span>
     <p class="catalog section__label z1">The problem</p>
 
     <div class="grid grid--2 z1">
-      <div>
-        <h2 class="title">You save things all&nbsp;day. You find none of&nbsp;them again.</h2>
-      </div>
-      <div class="stack measure">
-        <p class="body">
-          A link a friend sent. A recipe. A video you will watch properly later.
-          A screenshot of the thing you need on Thursday. Every app has a
-          &ldquo;saved&rdquo; folder and every one of them is a place things go
-          quiet.
-        </p>
-        <p class="body">
-          Laytr is the opposite arrangement. Saving is one gesture and it never
-          waits. Filing is optional. And the part nobody else does &mdash; the
-          coming back &mdash; is the whole product.
-        </p>
-      </div>
+      <h2 class="title">You save things all&nbsp;day. You find none of&nbsp;them again.</h2>
+      <p class="lede measure">
+        Every app has a &ldquo;saved&rdquo; folder, and every one of them is a
+        place things go quiet. Laytr is the one that brings them back.
+      </p>
     </div>
   </section>
 
   <!-- ===================================================================
-       The return ledger — the core loop, resolved against the reader's clock
+       The return ledger — resolved against the reader's own clock
        =================================================================== -->
   <section class="section shell relative">
     <span class="serial" aria-hidden="true">02</span>
-    <p class="catalog section__label z1">The return ledger</p>
+    <p class="catalog section__label z1">The return</p>
 
     <div class="grid grid--2 z1">
       <div class="stack">
         <h2 class="title">It comes back when you&nbsp;said.</h2>
         <p class="body measure">
-          Named moments first, calendar second. Every choice shows the real time
-          it means before you commit, and the item returns then &mdash; staged at
-          the top of your Inbox, not buried in a list.
-        </p>
-        <p class="body measure">
-          &ldquo;Not now&rdquo; ranks equal to &ldquo;Done&rdquo;. There are no
-          streaks, no overdue red, and no counts of shame anywhere in Laytr.
+          Named moments first, calendar second &mdash; and every one shows the
+          real time it means before you commit. No streaks, no overdue red.
+          &ldquo;Not now&rdquo; ranks equal to &ldquo;Done&rdquo;.
         </p>
       </div>
 
@@ -205,11 +188,11 @@
     <span class="serial" aria-hidden="true">03</span>
     <p class="catalog section__label z1">The catalog</p>
 
-    <h2 class="title z1" style="max-width:18ch">Four surfaces. Everything you saved, one tap deep.</h2>
+    <h2 class="title z1" style="max-width:16ch">One tense per tab.</h2>
 
     <div class="tabs z1" style="margin-top:var(--s-xl)" role="list">
-      <span class="tab tab--selected" role="listitem">Inbox</span>
-      <span class="tab" role="listitem">Later</span>
+      <span class="tab tab--selected" role="listitem">Now</span>
+      <span class="tab" role="listitem">Timeline</span>
       <span class="tab" role="listitem">Library</span>
       <span class="tab" role="listitem">Search</span>
     </div>
@@ -221,18 +204,18 @@
         <div class="exhibit__mount">
           <picture>
             <source media="(prefers-color-scheme: dark)"
-                    srcset="/assets/screens/inbox-dark-330.webp 330w, /assets/screens/inbox-dark-660.webp 660w"
+                    srcset="/assets/screens/now-dark-330.webp 330w, /assets/screens/now-dark-660.webp 660w"
                     sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw">
-            <img src="/assets/screens/inbox-light-660.webp"
-                 srcset="/assets/screens/inbox-light-330.webp 330w, /assets/screens/inbox-light-660.webp 660w"
+            <img src="/assets/screens/now-light-660.webp"
+                 srcset="/assets/screens/now-light-330.webp 330w, /assets/screens/now-light-660.webp 660w"
                  sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw"
                  width="660" height="1434" loading="lazy" decoding="async"
-                 alt="The Laytr Inbox. A returned item is staged at the top under a BACK ON TOP tab, with the line RETURNS TODAY 9:30 AM, above a grid of saved cards.">
+                 alt="The Now tab. A returned article is staged at the top under a BACK ON TOP tab with Done and Not now beneath it, then COMING NEXT, then just-saved cards wearing chartreuse WHEN? chips.">
           </picture>
         </div>
         <figcaption class="stack--tight stack">
-          <p class="catalog">№ 01 &middot; Inbox</p>
-          <h3 class="headline exhibit__title">A return arrives staged, not buried.</h3>
+          <p class="catalog">№ 01 &middot; Now</p>
+          <h3 class="headline exhibit__title">What came back, and what you just saved.</h3>
         </figcaption>
       </figure>
 
@@ -240,18 +223,18 @@
         <div class="exhibit__mount">
           <picture>
             <source media="(prefers-color-scheme: dark)"
-                    srcset="/assets/screens/later-dark-330.webp 330w, /assets/screens/later-dark-660.webp 660w"
+                    srcset="/assets/screens/timeline-dark-330.webp 330w, /assets/screens/timeline-dark-660.webp 660w"
                     sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw">
-            <img src="/assets/screens/later-light-660.webp"
-                 srcset="/assets/screens/later-light-330.webp 330w, /assets/screens/later-light-660.webp 660w"
+            <img src="/assets/screens/timeline-light-660.webp"
+                 srcset="/assets/screens/timeline-light-330.webp 330w, /assets/screens/timeline-light-660.webp 660w"
                  sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw"
                  width="660" height="1434" loading="lazy" decoding="async"
-                 alt="The Later ledger, grouped under stamped headings such as NEXT WEEK and SOMEDAY, each row showing the concrete time it returns.">
+                 alt="The Timeline tab. A ribbon of seven days runs across the top, marking each day that has a return, above rows grouped under THIS WEEK and NEXT WEEK, each stamped with its exact return time.">
           </picture>
         </div>
         <figcaption class="stack--tight stack">
-          <p class="catalog">№ 02 &middot; Later</p>
-          <h3 class="headline exhibit__title">Every promise you made, in order.</h3>
+          <p class="catalog">№ 02 &middot; Timeline</p>
+          <h3 class="headline exhibit__title">Everything ahead of you, in order.</h3>
         </figcaption>
       </figure>
 
@@ -270,7 +253,7 @@
         </div>
         <figcaption class="stack--tight stack">
           <p class="catalog">№ 03 &middot; Library</p>
-          <h3 class="headline exhibit__title">Links, articles, videos, places, products, PDFs, screenshots.</h3>
+          <h3 class="headline exhibit__title">Links, articles, videos, places, PDFs, screenshots.</h3>
         </figcaption>
       </figure>
 
@@ -289,7 +272,7 @@
         </div>
         <figcaption class="stack--tight stack">
           <p class="catalog">№ 04 &middot; Search</p>
-          <h3 class="headline exhibit__title">Reads inside articles, notes, tags &mdash; and your screenshots.</h3>
+          <h3 class="headline exhibit__title">Finds words inside articles &mdash; and inside screenshots.</h3>
         </figcaption>
       </figure>
 
@@ -335,7 +318,7 @@
   </section>
 
   <!-- ===================================================================
-       Saving
+       Saving — three claims, one line each
        =================================================================== -->
   <section class="section shell relative">
     <span class="serial" aria-hidden="true">04</span>
@@ -345,13 +328,9 @@
       <div class="stack">
         <h2 class="title">Share sheet in. Two taps. Done.</h2>
         <p class="body measure">
-          Safari, Photos, Files, Maps, YouTube, TikTok, Instagram &mdash; any app
-          with a share sheet. Links, articles, videos, places, products, PDFs,
-          images and screenshots each get their own kind of card.
-        </p>
-        <p class="body measure">
-          The save finishes before the sheet settles. If you want to say what it
-          is for, or when you want it back, that is an optional second beat.
+          Safari, Photos, Files, Maps, YouTube, TikTok, Instagram &mdash; the
+          save finishes before the sheet settles. Saying what it&rsquo;s for is
+          an optional second beat.
         </p>
         <div class="stickers" style="margin-top:var(--s-s)" role="list" aria-label="Save intents">
           <span class="sticker" role="listitem">Read</span>
@@ -366,27 +345,15 @@
       <div class="stack">
         <div class="mount stack--tight stack">
           <p class="catalog catalog--strong">Reads offline, forever</p>
-          <p class="body">
-            Articles are preserved as clean text with their images, stored on
-            your phone. Three page themes, serif or sans, your text size, your
-            place remembered. It is not a link. It is a copy you own.
-          </p>
+          <p class="body">Articles are kept as clean text with their images, on your phone. Not a link &mdash; a copy you own.</p>
         </div>
         <div class="mount stack--tight stack">
           <p class="catalog catalog--strong">Search looks inside</p>
-          <p class="body">
-            Titles, sources, your own notes, tags, the full text of saved
-            articles, and the words inside your screenshots &mdash; read
-            on-device by Apple Vision. The images never leave the phone.
-          </p>
+          <p class="body">Article text, your notes, tags, and the words in your screenshots &mdash; read on-device by Apple Vision.</p>
         </div>
         <div class="mount stack--tight stack">
           <p class="catalog catalog--strong">Bring your archive</p>
-          <p class="body">
-            Import what you already have from Pocket, Instapaper or Omnivore.
-            Files are recognised by their contents, never by their extension,
-            and re-running an import never duplicates anything.
-          </p>
+          <p class="body">Import from Pocket, Instapaper or Omnivore. Re-running an import never duplicates anything.</p>
         </div>
       </div>
     </div>
@@ -403,16 +370,9 @@
       <div class="stack">
         <h2 class="title">Everything lives on this&nbsp;phone.</h2>
         <p class="body measure">
-          No account. No sign-in. No Laytr server, because there isn&rsquo;t one.
-          Nothing you save is uploaded, scanned, profiled or sold, and there is
-          nobody to sell it to. Turn on Airplane Mode and Laytr works the same.
-        </p>
-        <p class="body measure">
-          
-          There is no analytics SDK reporting anything in the shipped build, and
-          no advertising SDK at all. The two optional diagnostics switches in
-          Settings are off by default and inert without provider configuration.
-          
+          No account, no sign-in, no Laytr server &mdash; because there
+          isn&rsquo;t one. Nothing you save is uploaded, scanned or sold. Turn on
+          Airplane Mode and Laytr works the same.
         </p>
         <p><a href="/privacy">Read the full privacy policy</a></p>
       </div>
@@ -420,17 +380,16 @@
       <div class="mount">
         <p class="catalog catalog--strong">What never leaves your device</p>
         <ul class="stack--tight stack" style="margin-top:var(--s-m)">
-          <li class="body">Everything you save &mdash; links, articles, files, images</li>
+          <li class="body">Everything you save</li>
           <li class="body">The text Laytr reads out of your screenshots</li>
           <li class="body">Your notes, tags, cases and favourites</li>
           <li class="body">Every search you type</li>
-          <li class="body">When things return, and what you did with them</li>
         </ul>
         <hr class="rule" style="margin-block:var(--s-l)">
         <p class="footnote muted">
-          Outbound requests go only to the sites you saved, to fetch that
-          page&rsquo;s own text and pictures. Laytr never downloads protected
-          platform video, and never touches a login-walled site at all.
+          Laytr fetches the pages you saved, and nothing else. No advertising
+          SDK, no tracking, and no App Tracking Transparency prompt &mdash;
+          there is nothing to track you with.
         </p>
       </div>
     </div>
@@ -443,18 +402,15 @@
     <span class="serial" aria-hidden="true">06</span>
     <p class="catalog section__label z1">Pricing</p>
 
-    <h2 class="title z1">Free holds 50 saves. Patron removes the&nbsp;limit.</h2>
-    <p class="body measure z1" style="margin-top:var(--s-l)">
-      That is the only difference between them. Choose the shape that suits you
-      &mdash; monthly, yearly, or once and never again.
-    </p>
+    <h2 class="title z1">Free holds 30 saves. Patron removes the&nbsp;limit.</h2>
+    <p class="body measure z1" style="margin-top:var(--s-l)">That is the only difference between them.</p>
 
     <div class="plans" style="margin-top:var(--s-xl)">
       <div class="plan">
         <p class="catalog catalog--strong">Free</p>
         <p class="plan__price">$0</p>
-        <p class="plan__period">up to 50 saves</p>
-        <p class="plan__note">Reading, search, organising and export are never limited.</p>
+        <p class="plan__period">up to 30 saves</p>
+        <p class="plan__note">Reading, search and export are never limited.</p>
       </div>
 
       
@@ -488,71 +444,22 @@
 
     <p class="footnote muted" style="margin-top:var(--s-l)">Prices are U.S. dollars. Your local price is set by the App Store and shown before you buy.</p>
 
-    <div class="scroll-x" style="margin-top:var(--s-xxl)">
-      <table class="compare">
-        <caption class="catalog catalog--strong">Free and Patron, side by side</caption>
-        <thead>
-          <tr>
-            <th scope="col">Capability</th>
-            <th scope="col">Free</th>
-            <th scope="col">Patron</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Saving new items</th>
-            <td>Up to 50</td>
-            <td>Unlimited</td>
-          </tr>
-          <tr>
-            <th scope="row">Reading, offline articles, the reader</th>
-            <td>Yes</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <th scope="row">Search, tags, cases, filters</th>
-            <td>Yes</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <th scope="row">Returns and reminders</th>
-            <td>Yes</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <th scope="row">Export your whole archive</th>
-            <td>Yes, always free</td>
-            <td>Yes, always free</td>
-          </tr>
-          <tr>
-            <th scope="row">Import from Pocket, Instapaper, Omnivore</th>
-            <td>Yes</td>
-            <td>Yes</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
     <div class="grid grid--2" style="margin-top:var(--s-xxl)">
       <div class="mount stack--tight stack">
         <p class="catalog catalog--strong">Promise one</p>
-        <h3 class="headline">Cancelling never deletes, hides or locks anything.</h3>
+        <h3 class="headline">Cancelling never deletes or locks anything.</h3>
         <p class="body">
-          A lapsed Patron keeps every save, keeps reading, keeps searching, keeps
-          exporting. The only thing that stops is adding new ones, until you are
-          back under 50 or back on a plan. There is
-          deliberately no code path in Laytr from what you paid to what you can
-          read.
+          You keep reading, searching and exporting every save. Only
+          <em>adding</em> stops, until you are back under
+          30 or back on a plan.
         </p>
       </div>
       <div class="mount stack--tight stack">
         <p class="catalog catalog--strong">Promise two</p>
         <h3 class="headline">Export is never behind the paywall.</h3>
         <p class="body">
-          One ZIP with readable Markdown and HTML, every note, tag, date and
-          case, your preserved articles, and your original files byte for byte.
-          Free, on any plan or none. And restoring a Laytr export is exempt from
-          the free limit &mdash; an export you cannot restore is not ownership.
+          One ZIP: readable Markdown and HTML, your notes and tags, your
+          articles, your original files. Free, on any plan or none.
         </p>
       </div>
     </div>
@@ -569,19 +476,19 @@
       <div class="stack">
         <h2 class="title">What Laytr deliberately does&nbsp;not do.</h2>
         <p class="body measure">
-          Most of these are boundaries, not gaps. They are here because you
-          should know them before you install, not after.
+          Mostly boundaries, not gaps &mdash; and better known before you
+          install.
         </p>
         <p><a href="/support#limits">The full list, with reasons</a></p>
       </div>
 
       <div>
         <ul class="ledger">
-          <li class="ledger__row"><span class="ledger__name">No sync between devices</span><span class="ledger__when muted">iPhone only, one device</span></li>
-          <li class="ledger__row"><span class="ledger__name">No AI, summaries or auto-tagging</span><span class="ledger__when muted">Not in version 1</span></li>
+          <li class="ledger__row"><span class="ledger__name">No sync between devices</span><span class="ledger__when muted">iPhone only</span></li>
+          <li class="ledger__row"><span class="ledger__name">No AI or auto-tagging</span><span class="ledger__when muted">Not in version 1</span></li>
           <li class="ledger__row"><span class="ledger__name">No downloading platform video</span><span class="ledger__when muted">Saved as a link</span></li>
           <li class="ledger__row"><span class="ledger__name">No paywall bypassing</span><span class="ledger__when muted">Ever</span></li>
-          <li class="ledger__row"><span class="ledger__name">No feed, discovery or recommendations</span><span class="ledger__when muted">Your archive only</span></li>
+          <li class="ledger__row"><span class="ledger__name">No feed or recommendations</span><span class="ledger__when muted">Your archive only</span></li>
           <li class="ledger__row"><span class="ledger__name">No iPad or Mac app</span><span class="ledger__when muted">Not yet</span></li>
         </ul>
       </div>
@@ -614,10 +521,8 @@
   
 </div>
 
-<p class="footnote muted" style="margin-top:var(--s-m);max-width:34rem">
-  Laytr is finished and in release testing. This page is the product it
-  describes &mdash; every claim on it is behaviour that already ships. When the
-  App&nbsp;Store listing is live, the link appears here.
+<p class="footnote muted" style="margin-top:var(--s-m);max-width:30rem">
+  In release testing. The link appears here when the listing is live.
 </p>
 
 </div>
