@@ -11,3 +11,7 @@
 
 /assets/screens/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600

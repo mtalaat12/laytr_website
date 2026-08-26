@@ -1,0 +1,27 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["KHRH45C4NG.com.laytr.app"],
+        "components": [
+          {
+            "/": "/welcome*",
+            "exclude": true,
+            "comment": "Onboarding tells the user to save this page as their first real save. If it opened the app instead of loading in Safari, the practice save would capture nothing and the onboarding beat would break."
+          },
+          {
+            "/": "/privacy*",
+            "exclude": true,
+            "comment": "App Review and users must be able to read the policy on the web. Never hand it to the app."
+          },
+          { "/": "/terms*", "exclude": true, "comment": "Readable on the web, always." },
+          { "/": "/support*", "exclude": true, "comment": "Readable on the web, always." },
+          {
+            "/": "/",
+            "comment": "Only the home page opens Laytr, and only for someone who already has it installed. Everything with a job on the web is excluded above."
+          }
+        ]
+      }
+    ]
+  }
+}
