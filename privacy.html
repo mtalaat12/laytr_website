@@ -9,7 +9,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="ea4e126d86d9">
+<meta name="laytr-build" content="fd4e0c47ec87">
 
 
 <meta property="og:type" content="website">
@@ -151,17 +151,36 @@
     <h2>Optional diagnostics</h2>
     
     <p>
-      Laytr has two switches under <strong>Library &rarr; Archive tools &rarr;
-      Privacy</strong> &mdash; &ldquo;Share anonymous usage&rdquo; and
-      &ldquo;Share crash reports&rdquo;. Both are <strong>off by
-      default</strong>.
+      Laytr has two switches under <strong>Now &rarr; Settings &rarr;
+      Privacy</strong>. Both are <strong>off by default</strong>. Off means
+      dropped, not queued for later.
     </p>
+    <dl>
+      <dt>Share anonymous usage</dt>
+      <dd>
+        Sends a fixed, published list of typed events &mdash; things like
+        &ldquo;an item was saved&rdquo;, &ldquo;a search returned results in the
+        1&ndash;10 band&rdquo;, &ldquo;the paywall was shown&rdquo;. Values are
+        categories and buckets, never precise counts and never text you typed.
+        Processed by PostHog on our behalf, on their
+        <strong>European Union</strong> servers.
+      </dd>
+      <dt>Share crash reports</dt>
+      <dd>
+        Sends the technical details of a crash or a freeze: the stack trace, the
+        app version, the iOS version and the device family. Every report passes
+        through a filter that removes URLs, file paths, filenames and e-mail
+        addresses before it is sent. Processed by Sentry on our behalf, on their
+        <strong>United States</strong> servers.
+      </dd>
+    </dl>
     <p>
-      In the version currently published, no diagnostics provider is configured
-      in the app at all, so these switches have nothing to send to and no data
-      leaves your device whether they are on or off. If that changes in a future
-      release, this page and the App&nbsp;Store privacy label will be updated
-      before that version ships, and the switches will still default to off.
+      When usage sharing is on, a <strong>random identifier</strong> is created
+      so two events can be recognised as coming from the same installation. It
+      is generated from nothing &mdash; not your device, not your Apple Account,
+      not an advertising identifier &mdash; and it is <strong>deleted the moment
+      you switch the toggle off</strong>, so turning it back on starts a new,
+      unlinked one. Reinstalling the app also produces a new one.
     </p>
     
 
@@ -241,6 +260,9 @@
       removed permanently. Deleting the Laytr app removes all of it from the
       device.
       
+      Optional diagnostics data is retained by our processors for no longer than
+      12 months, and is deleted sooner on request.
+      
     </p>
 
     <h2>Your rights</h2>
@@ -262,6 +284,13 @@
         app, and it is gone. There is no copy with us to request the deletion of.
       </li>
       
+      <li>
+        <strong>For diagnostics data</strong>, switching the toggle off deletes
+        the random identifier immediately and severs the link between past and
+        future events. To have already-received diagnostics deleted, write to
+        <a href="mailto:support@laytr.app">support@laytr.app</a>.
+      </li>
+      
     </ul>
     <p>
       We do not sell or share personal information as those terms are defined
@@ -280,6 +309,10 @@
     <h2>International transfers</h2>
     <p>
       Your saved content does not travel, because it does not leave your device.
+      
+      Optional diagnostics, if you enable them, are processed by our providers on
+      infrastructure that may be outside your country, under the transfer
+      safeguards in their own agreements with us.
       
       This website is served from a global content network, so the page you are
       reading may have been delivered from a server near you.
@@ -320,6 +353,7 @@
         <ul class="colophon__links stack--tight" style="margin-top:var(--s-m)" aria-labelledby="colophon-app">
           <li><a href="/">Overview</a></li>
           <li><a href="/support">Support</a></li>
+          <li><a href="/press">Press kit</a></li>
           <li><a href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">View on the App Store</a></li>
           
         </ul>

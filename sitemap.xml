@@ -17,6 +17,10 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://laytr.app/press</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://laytr.app/welcome</loc>
     <priority>0.5</priority>
   </url>
