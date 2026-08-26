@@ -833,6 +833,18 @@ ol {
   line-height: 1;
 }
 
+/* The pre-offer price, struck through beside the price actually charged. It is
+   deliberately quieter and smaller than the headline: the number a person pays
+   is the number that should read first. */
+.plan__was {
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--ink-muted);
+  margin-left: 0.35em;
+  vertical-align: 0.35em;
+}
+
 .plan__period {
   color: var(--ink-muted);
   font-size: 0.9375rem;
