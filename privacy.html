@@ -9,7 +9,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="6bfd551fc18d">
+<meta name="laytr-build" content="550806e12f33">
 
 
 <meta property="og:type" content="website">
@@ -69,13 +69,12 @@
   <h1 class="display" style="margin-top:var(--s-m);max-width:11ch">Privacy policy</h1>
 
   <p class="lede measure" style="margin-top:var(--s-xl)">
-    Laytr keeps what you save on your phone. There is no Laytr account, no Laytr
-    server holding your library, and nothing about what you save is uploaded to
-    us &mdash; because there is nowhere to upload it to.
+    Laytr keeps what you save on your phone. There is no Laytr account and no
+    Laytr server, so nothing about what you save is ever uploaded to us.
   </p>
 
   <p class="catalog" style="margin-top:var(--s-l)">
-    In effect 21 August 2026
+    In effect 30 August 2026
     <span class="catalog__sep">·</span>Applies to Laytr for iPhone, version 1.0
     <span class="catalog__sep">·</span>And to this website
   </p>
@@ -85,10 +84,10 @@
     <div class="note">
       <p class="catalog catalog--strong">The short version</p>
       <ul>
-        <li>Your saved content never leaves your device. There is no code path in Laytr that could send it anywhere.</li>
+        <li>Your saved content never reaches us. The only copy that leaves your phone is Laytr&rsquo;s backup in <strong>your own iCloud</strong>, which is described below and can be switched off.</li>
         <li>There is no account, no sign-in, and no profile of you.</li>
         <li>Laytr shows no advertising and does no tracking of any kind. It never asks for App Tracking Transparency permission, because it has nothing to track you with.</li>
-        <li>Two optional diagnostics switches exist in the app. Both are <strong>off unless you turn them on</strong>, and neither can ever carry your content.</li>
+        <li>Two diagnostics switches exist in the app. Both are <strong>on by default and can be turned off at any time</strong> in Now &rarr; Settings &rarr; Privacy, and neither can ever carry your content.</li>
         <li>This website sets no cookies, runs no analytics, and embeds nothing from anyone else.</li>
       </ul>
     </div>
@@ -119,6 +118,27 @@
       That backup is yours; we have no access to it.
     </p>
 
+    
+    <h3>Laytr&rsquo;s own iCloud backup</h3>
+    <p>
+      Laytr also keeps a copy of your archive in <strong>your own iCloud</strong>,
+      so your saves survive losing the app or the phone. It writes the same export
+      ZIP you can produce yourself, into Laytr&rsquo;s container in your iCloud
+      account, and keeps the newest two copies.
+    </p>
+    <p>
+      It goes to <strong>your</strong> iCloud, not to us. There is no account of
+      ours involved, no server of ours in the path, and nothing we could read: we
+      have no more access to your iCloud than to your phone. Apple&rsquo;s privacy
+      terms govern what is stored there.
+    </p>
+    <p>
+      It is <strong>on by default</strong> and switched off in
+      <strong>Settings &rarr; Storage</strong>. Turning it off stops further
+      copies; copies already in your iCloud are yours to delete, from Laytr or
+      from Apple&rsquo;s own storage settings. Restoring from it is additive and
+      never paywalled.
+    </p>
     
 
     <h2>Network requests Laytr makes</h2>
@@ -152,8 +172,15 @@
     
     <p>
       Laytr has two switches under <strong>Now &rarr; Settings &rarr;
-      Privacy</strong>. Both are <strong>off by default</strong>. Off means
-      dropped, not queued for later.
+      Privacy</strong>. Both are <strong>on by default</strong>, and you can
+      turn either one off at any time. Off means dropped, not queued for
+      later &mdash; and turning a switch back on never delivers anything
+      that happened while it was off.
+    </p>
+    <p>
+      Turning off <strong>Share anonymous usage</strong> also deletes the
+      random identifier it was using, so the link between what was sent
+      before and anything sent later is broken rather than merely paused.
     </p>
     <dl>
       <dt>Share anonymous usage</dt>
@@ -370,7 +397,7 @@
     </div>
 
     <div class="colophon__fine">
-      <p class="footnote muted">&copy; 2026 Waitery Inc. Laytr is an iPhone app. Nothing you save in it is uploaded to us, because there is nowhere to upload it to.</p>
+      <p class="footnote muted">&copy; 2026 Waitery Inc. Laytr is an iPhone app. Nothing you save in it is uploaded to us; there is no Laytr server to upload it to.</p>
       <p class="footnote muted">Apple, iPhone, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries. Laytr is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
     </div>
   </div>
