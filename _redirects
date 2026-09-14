@@ -5,6 +5,8 @@ https://www.laytr.app/*   https://laytr.app/:splat   301!
 /support    /support.html    200
 /welcome    /welcome.html    200
 /press      /press.html      200
+/pocket-alternative      /pocket-alternative.html      200
+/instapaper-alternative  /instapaper-alternative.html  200
 
 /privacy-policy  /privacy     301
 /policy          /privacy     301
@@ -12,3 +14,5 @@ https://www.laytr.app/*   https://laytr.app/:splat   301!
 /eula            /terms       301
 /help            /support     301
 /contact         /support     301
+/pocket          /pocket-alternative      301
+/instapaper      /instapaper-alternative  301

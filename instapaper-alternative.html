@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Welcome — Laytr</title>
-<meta name="description" content="The practice page Laytr saves during onboarding, so your first save is a real one.">
-<link rel="canonical" href="https://laytr.app/welcome">
+<title>Instapaper alternative with no account: Laytr imports your CSV</title>
+<meta name="description" content="A read later app with no sign-in that keeps saves on your own device and brings each one back on the day you chose. Imports the Instapaper CSV export.">
+<link rel="canonical" href="https://laytr.app/instapaper-alternative">
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
@@ -14,9 +14,9 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Laytr">
-<meta property="og:title" content="Welcome — Laytr">
-<meta property="og:description" content="The practice page Laytr saves during onboarding, so your first save is a real one.">
-<meta property="og:url" content="https://laytr.app/welcome">
+<meta property="og:title" content="Instapaper alternative with no account: Laytr imports your CSV">
+<meta property="og:description" content="A read later app with no sign-in that keeps saves on your own device and brings each one back on the day you chose. Imports the Instapaper CSV export.">
+<meta property="og:url" content="https://laytr.app/instapaper-alternative">
 <meta property="og:image" content="https://laytr.app/assets/brand/app-icon-512.png">
 <meta name="twitter:card" content="summary">
 
@@ -53,68 +53,159 @@
 </header>
 
 
-<!-- This page exists because the app links to it.
+<!-- The Instapaper page. Instapaper is a running service, so unlike the
+     Pocket page this one makes no claim about a shutdown. It answers the
+     search "Instapaper alternative" honestly: what is different about Laytr,
+     what Instapaper has that Laytr does not, and how the CSV import works.
 
-     Laytr's onboarding opens the real iOS share sheet on https://laytr.app/welcome
-     so a person's first save is an actual save rather than a picture of one
-     (Laytr/Features/Onboarding/OnboardingView.swift). The saved copy is written
-     locally and reads offline, but the original URL stays on the item, and
-     tapping "Open" brings someone here. If this page 404s, the first thing a
-     new user does in Laytr ends at an error.
-
-     Keep it aligned with practiceArticleHTML in
-     Laytr/Features/Onboarding/OnboardingFlow.swift. -->
+     Same rules as pocket-alternative.html: shipped behaviour only, "we"
+     voice, no dashes, no exclamation marks, no install numbers, nothing
+     about Airplane Mode, sync copy exact (iPhone and iPad through the
+     reader's own iCloud, on by default; the Mac does not sync yet), so the
+     page is named in website/RELEASE_GATE.md. A competitor is mentioned as
+     a fact and never as a put-down (marketing/pr/COPY_STANDARD.md). -->
 
 <main id="main" class="section shell">
-  <p class="catalog">№ 0001 &middot; laytr.app &middot; The practice page</p>
+  <p class="catalog">Instapaper &middot; laytr.app</p>
+  <h1 class="display" style="margin-top:var(--s-m);max-width:16ch">An Instapaper alternative with no account and a day it comes&nbsp;back</h1>
 
-  <h1 class="title" style="margin-top:var(--s-m);max-width:20ch">How to keep what matters</h1>
+  <p class="lede measure" style="margin-top:var(--s-xl)">
+    Instapaper is a good reading app and it is still running. If what you want
+    is a read later app that needs no sign-in, keeps your saves on your own
+    device, and brings a save back on a day you chose, Laytr is that, and it
+    reads Instapaper&rsquo;s CSV export.
+  </p>
 
-  <div class="prose" style="margin-top:var(--s-xl)">
-    <p class="lede">
-      If you got here from inside Laytr: this is the page you just saved. You
-      already have your own copy of it, stored on your phone, and it opens with
-      no signal at all.
-    </p>
-
-    <h2>The gesture</h2>
-    <p>
-      From any app, tap Share, then Laytr. That is the whole thing. The save is
-      instant &mdash; filing it is always optional, and Laytr never makes you
-      decide anything before it will accept what you gave it.
-    </p>
-
-    <h2>Where it goes</h2>
-    <p>
-      Every save lands in Now, gets a number, and waits for you. Give it a
-      return time, tonight or the weekend or a date you pick, and it comes
-      back on top then. There is no feed and no algorithm, and if you are not
-      ready when it returns, &ldquo;Not now&rdquo; is always an acceptable
-      answer.
-    </p>
-
-    <h2>Whose it is</h2>
-    <p>
-      Yours. There is no account and no server: articles, screenshots and files
-      are stored on this phone, readable offline, and exportable in full, free,
-      on any plan or none. If you leave iCloud backup on, a copy also waits in
-      your own iCloud, so even losing the phone does not lose your saves.
-    </p>
-
-    <p>That is it. Save now. Come back Laytr.</p>
+  <div class="btn-row" style="margin-top:var(--s-xl)">
+    
+    <a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a>
+    
+    <a class="btn btn--outline" href="#import">How to import from Instapaper</a>
   </div>
 
-  <hr class="rule" style="margin-block:var(--s-xxl)">
-
-  <div class="stack">
-    <p class="catalog catalog--strong">New here?</p>
-    <p class="body measure">
-      This page is a working example of what Laytr preserves. The rest of the
-      product is on the overview.
-    </p>
-    <p><a href="/">What Laytr is</a></p>
-  </div>
+  <p class="footnote muted measure" style="margin-top:var(--s-m)">
+    iPhone, iPad and Mac. Free is the full app with room for
+    30 saves. Import and export are free on every
+    plan, and on none.
+  </p>
 </main>
+
+<!-- ===================================================================
+     01 What is different
+     =================================================================== -->
+<section class="section shell relative">
+  <span class="serial" aria-hidden="true">01</span>
+  <p class="catalog section__label z1">What is different</p>
+
+  <div class="grid grid--2 z1">
+    <div class="stack">
+      <h2 class="title">Every save, from any app, under one&nbsp;roof.</h2>
+      <p class="body measure">
+        What you save is scattered across apps and never returned to. Laytr
+        takes articles, links, screenshots, PDFs and photos from the share
+        sheet of any app and files them in one place, with no account and no
+        server of ours behind it, so the saves stay yours.
+      </p>
+      <p class="body measure">
+        Then it does the thing a reading list never did: you give a save a
+        day, and on that day it comes back to the top of the app. The list
+        shrinks instead of growing.
+      </p>
+    </div>
+
+    <div class="stack">
+      <div class="mount stack--tight stack">
+        <p class="catalog catalog--strong">No account, no server</p>
+        <p class="body">
+          There is nothing to sign up for. Your iPhone and iPad keep each other
+          up to date through your own iCloud, on by default with one switch to
+          turn it off. Laytr for Mac is on the Mac App Store, and a version
+          that joins the same iCloud sync is coming.
+        </p>
+      </div>
+      <div class="mount stack--tight stack">
+        <p class="catalog catalog--strong">Cases, not folders</p>
+        <p class="body">
+          Saves file into cases: a trip, a course, a project, a decision.
+          Your Instapaper folders become cases of the same name on import.
+        </p>
+      </div>
+      <div class="mount stack--tight stack">
+        <p class="catalog catalog--strong">What Instapaper has that Laytr does not</p>
+        <p class="body">
+          Highlights and notes inside the text, sending to a Kindle, text to
+          speech, and a web app. If those are what you use every day, keep
+          Instapaper. Laytr is for the person whose problem is the pile, not
+          the page.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     02 How to import
+     =================================================================== -->
+<section class="section shell relative" id="import">
+  <span class="serial" aria-hidden="true">02</span>
+  <p class="catalog section__label z1">How to import from Instapaper</p>
+
+  <div class="grid grid--2 z1">
+    <div class="stack">
+      <h2 class="title">One CSV, and Laytr reads the&nbsp;rest.</h2>
+      <p class="body measure">
+        Laytr detects the file by its contents, so a renamed export still
+        works. Re-running the same file never duplicates anything, and an
+        interrupted import carries on from where it stopped.
+      </p>
+    </div>
+
+    <div class="stack">
+      <div class="mount stack--tight stack">
+        <p class="catalog catalog--strong">1. Export from Instapaper</p>
+        <p class="body">
+          On instapaper.com, open Settings and choose the CSV export. The file
+          has the columns URL, Title, Selection, Folder and Timestamp; newer
+          exports add Tags. Put it where the Files app can see it, or AirDrop
+          it to your iPhone.
+        </p>
+      </div>
+      <div class="mount stack--tight stack">
+        <p class="catalog catalog--strong">2. Open the import in Laytr</p>
+        <p class="body">
+          Open the Now tab and tap the gear for Settings. Under Archive choose
+          Import, then Choose a file and pick the CSV.
+        </p>
+      </div>
+      <div class="mount stack--tight stack">
+        <p class="catalog catalog--strong">3. What comes across</p>
+        <p class="body">
+          Links, titles, tags and the date you saved each one. Unread lands as
+          saves and Archive arrives already marked done. Starred is kept as a
+          favourite. A custom folder becomes a case with the same name. The
+          Selection column, Instapaper&rsquo;s saved highlight, is not imported.
+        </p>
+      </div>
+      <div class="mount stack--tight stack">
+        <p class="catalog catalog--strong">4. On the free plan</p>
+        <p class="body">
+          Free has room for 30 saves. A bigger
+          export brings in the first 30 and reports
+          how many are waiting; open the same file again on Premium, or once
+          you are below the limit, and Laytr imports exactly the rest. Nothing
+          is changed or deleted.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-row" style="margin-top:var(--s-xl)">
+    
+    <a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a>
+    
+    <a class="btn btn--outline" href="/pocket-alternative">Coming from Pocket instead</a>
+  </div>
+</section>
 
 <footer class="colophon">
   <div class="shell">
