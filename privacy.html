@@ -9,7 +9,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="18a277841e6b">
+<meta name="laytr-build" content="49a2bf64bd80">
 
 
 <meta property="og:type" content="website">
@@ -74,7 +74,7 @@
   </p>
 
   <p class="catalog" style="margin-top:var(--s-l)">
-    In effect 19 September 2026
+    In effect 23 September 2026
     <span class="catalog__sep">·</span>Applies to Laytr for iPhone and iPad, version 1.0.7, and Laytr for Mac, version 1.0
     <span class="catalog__sep">·</span>And to this website
   </p>
@@ -88,6 +88,8 @@
         <li>There is no account, no sign-in, and no profile of you.</li>
         <li>Laytr shows no advertising and does no tracking of any kind. It never asks for App Tracking Transparency permission, because it has nothing to track you with.</li>
         <li>Two diagnostics switches exist in the app. Both are <strong>on by default and can be turned off at any time</strong> in Now &rarr; Settings &rarr; Privacy, and neither can ever carry your content.</li>
+        
+        <li>Payment is Apple&rsquo;s. The purchase step itself is run for us by <strong>RevenueCat</strong>, a processor that sees the purchase &mdash; a random identifier and what was bought &mdash; and never what you saved. There is no switch for it, because it is what performs the purchase.</li>
         
         <li>This website sets no cookies, runs no analytics, and embeds nothing from anyone else.</li>
       </ul>
@@ -158,6 +160,11 @@
         <strong>To complete a purchase.</strong> Purchases go through
         Apple&rsquo;s App Store using StoreKit. Laytr never sees or handles your
         payment details, and there is no Laytr receipt-validation server.
+        
+        The purchase step is run on our behalf by RevenueCat, a purchases
+        processor, which is described under Purchases below. It is not
+        optional: it is the thing that performs the purchase, so it is used
+        exactly when you buy something and never otherwise.
         
       </li>
       <li>
@@ -282,6 +289,27 @@
       billing address or Apple Account. Refunds, renewals and cancellations are
       managed in your Apple Account settings, not by us.
       
+    </p>
+    <p>
+      The purchase step itself is run for us by <strong>RevenueCat</strong>
+      (RevenueCat, Inc.), a purchases processor acting on our behalf. When you
+      buy a plan, RevenueCat receives a <strong>random identifier</strong> its
+      software makes up for your installation &mdash; not your name, not your
+      Apple Account, not an advertising identifier &mdash; together with the
+      <strong>purchase history</strong> attached to it: which plan, when, and
+      whether a subscription is still active. It never receives your name,
+      card, billing address or Apple Account, and it never receives anything
+      you saved. It does not use any of this for tracking or advertising, and
+      it is not linked to you as a person. What the app unlocks is still
+      decided by Apple&rsquo;s own verified record on your device, not by
+      RevenueCat.
+    </p>
+    <p>
+      There is no switch for this, and it would be misleading to offer one:
+      RevenueCat is what performs the purchase, so it is involved exactly when
+      you buy something and at no other time. Nothing is sent to it while you
+      save, read, search or export.
+      
       
     </p>
 
@@ -309,6 +337,10 @@
       Optional diagnostics data is retained by our processors for no longer than
       12 months, and is deleted sooner on request.
       
+      
+      The purchase record RevenueCat holds for a random identifier is kept for
+      as long as that purchase can still affect what the app unlocks, and is
+      deleted on request; Apple&rsquo;s own purchase record is Apple&rsquo;s.
       
     </p>
 
@@ -339,6 +371,13 @@
       </li>
       
       
+      <li>
+        <strong>For the purchase record held by RevenueCat</strong>, write to
+        <a href="mailto:support@laytr.app">support@laytr.app</a>
+        and we will have it deleted. Because the identifier is random, tell us
+        roughly when you bought and on which plan so it can be found.
+      </li>
+      
     </ul>
     <p>
       We do not sell or share personal information as those terms are defined
@@ -362,6 +401,10 @@
       infrastructure that may be outside your country, under the transfer
       safeguards in their own agreements with us.
       
+      
+      The purchase record described under Purchases is processed by RevenueCat
+      on infrastructure in the <strong>United States</strong>, under the
+      transfer safeguards in its agreement with us.
       
       This website is served from a global content network, so the page you are
       reading may have been delivered from a server near you.

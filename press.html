@@ -9,7 +9,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="18a277841e6b">
+<meta name="laytr-build" content="49a2bf64bd80">
 
 
 <meta property="og:type" content="website">
@@ -139,8 +139,10 @@
         <p class="catalog catalog--strong">Built natively, all the way down</p>
         <p class="body">
           SwiftUI throughout, adopting Liquid Glass on iOS&nbsp;26 through
-          standard components. StoreKit&nbsp;2 with transaction verification and
-          no third-party SDK anywhere in the purchase path.
+          standard components. StoreKit&nbsp;2 with transaction verification, which
+          alone decides what a reader owns. The purchase step itself is run by
+          RevenueCat, which sees a random identifier and what was bought, and
+          never anything saved.
         </p>
       </div>
     </div>
