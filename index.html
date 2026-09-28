@@ -3,26 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laytr — Save now. Come back Laytr.</title>
-<meta name="description" content="A private, local-first iPhone inbox for everything you mean to come back to. Save from any app, choose when it returns, and it does. No account, no cloud, no ads.">
+<title>Laytr — Save anything. Laytr reminds you when.</title>
+<meta name="description" content="Links, recipes, videos, screenshots and PDFs from any app, in one place on your iPhone, iPad and Mac. Pick a day and Laytr reminds you. No account, no ads.">
 <link rel="canonical" href="https://laytr.app">
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="49a2bf64bd80">
+<meta name="laytr-build" content="8454f50516f7">
 
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Laytr">
-<meta property="og:title" content="Laytr — Save now. Come back Laytr.">
-<meta property="og:description" content="A private, local-first iPhone inbox for everything you mean to come back to. Save from any app, choose when it returns, and it does. No account, no cloud, no ads.">
+<meta property="og:title" content="Laytr — Save anything. Laytr reminds you when.">
+<meta property="og:description" content="Links, recipes, videos, screenshots and PDFs from any app, in one place on your iPhone, iPad and Mac. Pick a day and Laytr reminds you. No account, no ads.">
 <meta property="og:url" content="https://laytr.app">
 <meta property="og:image" content="https://laytr.app/assets/brand/app-icon-512.png">
 <meta name="twitter:card" content="summary">
 
 <meta name="apple-mobile-web-app-title" content="Laytr">
-<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f6f5f1">
 
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/app-icon-180.png">
@@ -44,360 +44,247 @@
     
     <nav class="nav" aria-label="Site">
       <ul>
-        <li><a class="nav__link" href="/support">Support</a></li>
-            <li><a class="nav__link" href="/privacy">Privacy</a></li>
-            <li><a class="nav__link" href="/terms">Terms</a></li>
+        <li class="nav__item"><a class="nav__link" href="/#how">How it works</a></li>
+        <li class="nav__item"><a class="nav__link" href="/#pricing">Pricing</a></li>
+        <li class="nav__item"><a class="nav__link" href="/support">Support</a></li>
+            <li class="nav__item"><a class="nav__link" href="/privacy">Privacy</a></li>
+        <li><a class="nav__cta" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get the app</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 
-<main id="main">
+<!-- The homepage, Direction "Bento" (owner's pick 2026-09-28, with the
+     collapsing piles from the "Story" direction). Concepts and research:
+     design/website-revamp-2026-09/.
+
+     Rules this page is held to, on top of the site's own:
+     - Problems first. It opens on how 9to5Mac framed Laytr (we all save
+       things everywhere and find them nowhere), then the answer.
+     - Story order (owner, 2026-09-14): one place from any app, no account
+       and no server of ours, pick a day and Laytr reminds you, cases, one
+       app on iPhone, iPad and Mac.
+     - "Laytr reminds you". Never "sends it back", "comes back" or "shows
+       up". Never airplane mode or offline. The company speaks as "we".
+     - No hand-built App Store badge (Apple forbids recreating it): the
+       action is a plain text button.
+     - Every price comes from content/site.json. The When tile's times are
+       resolved in the visitor's own clock by assets/js/ledger.js.
+     - This page makes cross-device claims, so it is named in
+       website/RELEASE_GATE.md. -->
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="m" viewBox="0 0 240 240"><g fill="currentColor"><rect x="98" y="10" width="44" height="220" rx="22"/><rect x="98" y="10" width="44" height="220" rx="22" transform="rotate(60 120 120)"/><rect x="98" y="10" width="44" height="220" rx="22" transform="rotate(120 120 120)"/></g></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<main id="main" class="home">
 
   <!-- ===================================================================
        Hero
        =================================================================== -->
-  <section class="hero shell">
-    <span class="mark mark--lg hero__mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
-<rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(0.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(60.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(120.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-</svg></span>
-
-    <h1 class="display hero__display">Save&nbsp;now. Come&nbsp;back Laytr.</h1>
-
-    <p class="lede hero__lede">
-      Save from any app, say when you want it back, and it returns to the top
-      of the app that day.
-    </p>
-
-    <!-- The call to action, in the only three honest states there are.
-
-     There is deliberately no hand-drawn "Download on the App Store" button.
-     Apple's marketing guidelines require the official badge artwork, unmodified,
-     and forbid recreating it; the badge is added by the owner as an image once
-     the App Store record exists (website/README.md, "Update the App Store link").
-     Until then the page says plainly that the app is not on the store yet,
-     rather than showing a button that goes nowhere. -->
-<div class="btn-row hero__actions">
-  
-  <a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a>
-  
-
-  
-</div>
-
-
-
-    <p class="catalog hero__facts">
-      No account<span class="catalog__sep">·</span>No server of ours<span class="catalog__sep">·</span>No
-      ads<span class="catalog__sep">·</span>iPhone, iPad and Mac
-    </p>
-
-    <p class="footnote muted" style="margin-top:var(--s-l);max-width:34rem">
-      &ldquo;An incredibly organized UI for keeping tabs on
-      everything.&rdquo; &mdash; 9to5Mac, Indie App Spotlight
-    </p>
-  </section>
-
-  <!-- ===================================================================
-       The problem — one thought, not an essay
-       =================================================================== -->
-  <section class="section shell relative">
-    <span class="serial" aria-hidden="true">01</span>
-    <p class="catalog section__label z1">The problem</p>
-
-    <div class="grid grid--2 z1">
-      <h2 class="title">You save things all&nbsp;day. You find none of&nbsp;them again.</h2>
-      <p class="lede measure">
-        Browser bookmarks, in-app saved folders, screenshots you took to
-        remember something, tabs left open for weeks. Things go into those
-        piles all day and almost never come out. Laytr keeps all of it in one
-        place, where every save can be given a day to return.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===================================================================
-       The return ledger — resolved against the reader's own clock
-       =================================================================== -->
-  <section class="section shell relative">
-    <span class="serial" aria-hidden="true">02</span>
-    <p class="catalog section__label z1">The return</p>
-
-    <div class="grid grid--2 z1">
-      <div class="stack">
-        <h2 class="title">It comes back when you&nbsp;said.</h2>
-        <p class="body measure">
-          Pick a named moment or an exact date, and either way Laytr shows the
-          real time it means before you commit. When it arrives, the save is
-          waiting, and if the moment is wrong, &ldquo;Not now&rdquo; sits right
-          next to &ldquo;Done&rdquo;. There are no streaks and no overdue
-          badges.
-        </p>
-      </div>
-
-      <div>
-        <ul class="ledger">
-          <li class="ledger__row" data-return="tonight">
-            <span class="ledger__name">Tonight</span>
-            <span class="ledger__when">
-              <span class="mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
-<rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(0.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(60.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(120.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-</svg></span><span data-return-value>Today &middot; 9:00 PM</span>
-            </span>
-          </li>
-          <li class="ledger__row" data-return="weekend">
-            <span class="ledger__name">This weekend</span>
-            <span class="ledger__when">
-              <span class="mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
-<rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(0.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(60.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(120.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-</svg></span><span data-return-value>Sat &middot; 9:00 AM</span>
-            </span>
-          </li>
-          <li class="ledger__row" data-return="next-week">
-            <span class="ledger__name">Next week</span>
-            <span class="ledger__when">
-              <span class="mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
-<rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(0.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(60.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(120.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-</svg></span><span data-return-value>Mon &middot; 9:00 AM</span>
-            </span>
-          </li>
-          <li class="ledger__row" data-return="pick">
-            <span class="ledger__name">Pick a date</span>
-            <span class="ledger__when muted">Any day, any time</span>
-          </li>
-          <li class="ledger__row" data-return="someday">
-            <span class="ledger__name">Someday</span>
-            <span class="ledger__when muted">No date &middot; never lost</span>
-          </li>
-        </ul>
-        <p class="catalog" style="margin-top:var(--s-m)" data-return-stamp>
-          The same times Laytr would give you
-        </p>
+  <section class="hero">
+    <div class="wrap">
+      <p class="pill"><svg aria-hidden="true"><use href="#m"/></svg><span>For iPhone, iPad and Mac</span></p>
+      <h1><span>Save anything.</span> <span>Laytr reminds you when.</span></h1>
+      <p class="lede">Links, recipes, videos, screenshots and PDFs from any app, in one place. Pick a day and Laytr reminds you.</p>
+      <div class="cta">
+        
+        <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8"><svg aria-hidden="true"><use href="#m"/></svg>Get Laytr on the App&nbsp;Store</a>
+        
+        <p class="cta-note">Free to start. No account, ever.</p>
       </div>
     </div>
-  </section>
 
-  <!-- ===================================================================
-       Exhibits — the real app, no invented device chrome
-       =================================================================== -->
-  <section class="section shell relative">
-    <span class="serial" aria-hidden="true">03</span>
-    <p class="catalog section__label z1">The catalog</p>
-
-    <h2 class="title z1" style="max-width:16ch">One tense per tab.</h2>
-
-    <div class="tabs z1" style="margin-top:var(--s-xl)" role="list">
-      <span class="tab tab--selected" role="listitem">Now</span>
-      <span class="tab" role="listitem">Timeline</span>
-      <span class="tab" role="listitem">Library</span>
-      <span class="tab" role="listitem">Search</span>
-    </div>
-    <div class="tabs__rule" aria-hidden="true"></div>
-
-    <div class="exhibits" style="margin-top:var(--s-xxl)">
-
-      <figure class="exhibit">
-        <div class="exhibit__mount">
-          <picture>
-            <source media="(prefers-color-scheme: dark)"
-                    srcset="/assets/screens/now-dark-330.webp 330w, /assets/screens/now-dark-660.webp 660w"
-                    sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw">
-            <img src="/assets/screens/now-light-660.webp"
-                 srcset="/assets/screens/now-light-330.webp 330w, /assets/screens/now-light-660.webp 660w"
-                 sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw"
-                 width="660" height="1434" loading="lazy" decoding="async"
-                 alt="The Now tab. A returned article is staged at the top under a BACK ON TOP tab with Done and Not now beneath it, then COMING NEXT, then just-saved cards wearing chartreuse WHEN? chips.">
-          </picture>
-        </div>
-        <figcaption class="stack--tight stack">
-          <p class="catalog">№ 01 &middot; Now</p>
-          <h3 class="headline exhibit__title">What came back, and what you just saved.</h3>
-        </figcaption>
-      </figure>
-
-      <figure class="exhibit">
-        <div class="exhibit__mount">
-          <picture>
-            <source media="(prefers-color-scheme: dark)"
-                    srcset="/assets/screens/timeline-dark-330.webp 330w, /assets/screens/timeline-dark-660.webp 660w"
-                    sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw">
-            <img src="/assets/screens/timeline-light-660.webp"
-                 srcset="/assets/screens/timeline-light-330.webp 330w, /assets/screens/timeline-light-660.webp 660w"
-                 sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw"
-                 width="660" height="1434" loading="lazy" decoding="async"
-                 alt="The Timeline tab. A ribbon of seven days runs across the top, marking each day that has a return, above rows grouped under THIS WEEK and NEXT WEEK, each stamped with its exact return time.">
-          </picture>
-        </div>
-        <figcaption class="stack--tight stack">
-          <p class="catalog">№ 02 &middot; Timeline</p>
-          <h3 class="headline exhibit__title">Everything ahead of you, in order.</h3>
-        </figcaption>
-      </figure>
-
-      <figure class="exhibit">
-        <div class="exhibit__mount">
-          <picture>
-            <source media="(prefers-color-scheme: dark)"
-                    srcset="/assets/screens/library-dark-330.webp 330w, /assets/screens/library-dark-660.webp 660w"
-                    sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw">
-            <img src="/assets/screens/library-light-660.webp"
-                 srcset="/assets/screens/library-light-330.webp 330w, /assets/screens/library-light-660.webp 660w"
-                 sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw"
-                 width="660" height="1434" loading="lazy" decoding="async"
-                 alt="The Laytr Library: filter tabs across the top, tag chips with live counts, numbered cases, and a grid of saved cards of different kinds.">
-          </picture>
-        </div>
-        <figcaption class="stack--tight stack">
-          <p class="catalog">№ 03 &middot; Library</p>
-          <h3 class="headline exhibit__title">Links, articles, videos, places, PDFs, screenshots.</h3>
-        </figcaption>
-      </figure>
-
-      <figure class="exhibit">
-        <div class="exhibit__mount">
-          <picture>
-            <source media="(prefers-color-scheme: dark)"
-                    srcset="/assets/screens/search-dark-330.webp 330w, /assets/screens/search-dark-660.webp 660w"
-                    sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw">
-            <img src="/assets/screens/search-light-660.webp"
-                 srcset="/assets/screens/search-light-330.webp 330w, /assets/screens/search-light-660.webp 660w"
-                 sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw"
-                 width="660" height="1434" loading="lazy" decoding="async"
-                 alt="Laytr search for the word noodles, showing kind and intent filter chips and one matching saved video result.">
-          </picture>
-        </div>
-        <figcaption class="stack--tight stack">
-          <p class="catalog">№ 04 &middot; Search</p>
-          <h3 class="headline exhibit__title">Finds words inside articles and inside your screenshots.</h3>
-        </figcaption>
-      </figure>
-
-      <figure class="exhibit">
-        <div class="exhibit__mount">
-          <picture>
-            <source media="(prefers-color-scheme: dark)"
-                    srcset="/assets/screens/detail-dark-330.webp 330w, /assets/screens/detail-dark-660.webp 660w"
-                    sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw">
-            <img src="/assets/screens/detail-light-660.webp"
-                 srcset="/assets/screens/detail-light-330.webp 330w, /assets/screens/detail-light-660.webp 660w"
-                 sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw"
-                 width="660" height="1434" loading="lazy" decoding="async"
-                 alt="A saved item's detail page, showing the accession line, intent and schedule stickers, the stored file with its size, a note field, tags, case and source.">
-          </picture>
-        </div>
-        <figcaption class="stack--tight stack">
-          <p class="catalog">№ 05 &middot; Item</p>
-          <h3 class="headline exhibit__title">Stored on this phone. The size is right there.</h3>
-        </figcaption>
-      </figure>
-
-      <figure class="exhibit">
-        <div class="exhibit__mount">
-          <picture>
-            <source media="(prefers-color-scheme: dark)"
-                    srcset="/assets/screens/reader-dark-330.webp 330w, /assets/screens/reader-dark-660.webp 660w"
-                    sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw">
-            <img src="/assets/screens/reader-light-660.webp"
-                 srcset="/assets/screens/reader-light-330.webp 330w, /assets/screens/reader-light-660.webp 660w"
-                 sizes="(min-width: 64rem) 330px, (min-width: 40rem) 44vw, 88vw"
-                 width="660" height="1434" loading="lazy" decoding="async"
-                 alt="The Laytr reader showing a saved article as clean serif text with headings and a pull quote, with a text size control in the top bar.">
-          </picture>
-        </div>
-        <figcaption class="stack--tight stack">
-          <p class="catalog">№ 06 &middot; Reader</p>
-          <h3 class="headline exhibit__title">The article itself, stored on your phone. It opens in Airplane Mode.</h3>
-        </figcaption>
-      </figure>
-
-    </div>
-  </section>
-
-  <!-- ===================================================================
-       Saving — three claims, one line each
-       =================================================================== -->
-  <section class="section shell relative">
-    <span class="serial" aria-hidden="true">04</span>
-    <p class="catalog section__label z1">Saving</p>
-
-    <div class="grid grid--2 z1">
-      <div class="stack">
-        <h2 class="title">Two taps in the share&nbsp;sheet.</h2>
-        <p class="body measure">
-          Laytr shows up wherever the share sheet does: Safari, Photos, Files,
-          Maps, YouTube, TikTok, Instagram. The save finishes before the sheet
-          closes, and filing it properly can wait, or never happen at all.
-        </p>
-        <div class="stickers" style="margin-top:var(--s-s)" role="list" aria-label="Save intents">
-          <span class="sticker" role="listitem">Read</span>
-          <span class="sticker" role="listitem">Watch</span>
-          <span class="sticker" role="listitem">Visit</span>
-          <span class="sticker" role="listitem">Cook</span>
-          <span class="sticker" role="listitem">Buy</span>
-          <span class="sticker" role="listitem">Try</span>
+    <div class="wrap">
+      <div class="stage" aria-hidden="true">
+        <div class="ph l"><img src="/assets/shots/phone-share.webp" alt="" width="720" height="1564"></div>
+        <div class="ph r"><img src="/assets/shots/phone-now.webp" alt="" width="720" height="1564"></div>
+        <div class="ph c lock">
+          <div class="scr">
+            <div class="date">Tuesday 22 September</div>
+            <div class="time">9:30</div>
+            <div class="notif">
+              <div class="ic"><svg><use href="#m"/></svg></div>
+              <div>
+                <div class="top"><span>LAYTR</span><span>now</span></div>
+                <b>15-minute chili crisp noodles</b>
+                <span>Back on top of Now — you chose this moment.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="stack">
-        <div class="mount stack--tight stack">
-          <p class="catalog catalog--strong">Articles are kept, not linked</p>
-          <p class="body">A saved article is its full text and images, so it still opens years later, even after the original page is gone.</p>
+    <figure class="press-line">
+      <blockquote>&ldquo;An incredibly organized UI for keeping tabs on everything.&rdquo;</blockquote>
+      <figcaption>Michael Burkhardt &middot; <a href="https://9to5mac.com/2026/08/29/indie-app-spotlight-laytr-is-a-one-stop-shop-for-logging-everything-you-want-to-find-later/">9to5Mac</a></figcaption>
+    </figure>
+  </section>
+
+  <!-- ===================================================================
+       The problem: the piles collapse into one place as you scroll
+       =================================================================== -->
+  <section class="sec" aria-labelledby="problem-t">
+    <div class="wrap">
+      <div class="head">
+        <p class="home-eyebrow">The problem</p>
+        <h2 id="problem-t" class="rv">You save things everywhere. You find them nowhere.</h2>
+        <p class="lede rv">Bookmarks, saved posts, screenshots, open tabs. It all goes in. Almost none of it comes out.</p>
+      </div>
+
+      <div class="ba rv">
+        <div class="before" id="before">
+          <span class="tag">Before</span>
+          <ul class="piles">
+            <li class="pile" style="--k:0;--x:38;--y:25;--r:-9;--sr:-3"><div class="in"><span class="w">Safari</span><b>Bookmarks</b><span class="l">Saved in March. Never opened.</span></div></li>
+            <li class="pile" style="--k:1;--x:62;--y:42;--r:7;--sr:2"><div class="in"><span class="w">Instagram</span><b>Saved posts</b><span class="l">The recipe is in there somewhere.</span></div></li>
+            <li class="pile" style="--k:2;--x:37;--y:61;--r:5;--sr:-1"><div class="in"><span class="w">Photos</span><b>Screenshots</b><span class="l">1 of 2,000. Good luck.</span></div></li>
+            <li class="pile" style="--k:3;--x:61;--y:79;--r:-6;--sr:3"><div class="in"><span class="w">Safari</span><b>Open tabs</b><span class="l">Open for three weeks.</span></div></li>
+          </ul>
         </div>
-        <div class="mount stack--tight stack">
-          <p class="catalog catalog--strong">Search looks inside</p>
-          <p class="body">Article text, your notes, tags, and the words in your screenshots, which are read on the phone by Apple&rsquo;s Vision framework.</p>
+        <div class="bridge">
+          <span class="arrow" aria-hidden="true"><svg><use href="#arrow"/></svg></span>
+          <p>Laytr puts it all in one place, and reminds you when it matters.</p>
         </div>
-        <div class="mount stack--tight stack">
-          <p class="catalog catalog--strong">Bring your archive</p>
-          <p class="body">Import from Pocket, Instapaper or Omnivore. Re-running an import never duplicates anything.</p>
+        <div class="after">
+          <span class="tag">After</span>
+          <div class="tph"><img src="/assets/shots/phone-now-scrolled.webp" alt="Laytr's Now screen: a recipe back on top for today, with the week's saves as cards below it." width="720" height="1564" loading="lazy"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===================================================================
-       Privacy
+       The bento: how, when, one place, cases, search, everywhere,
+       private, Pocket, since August
        =================================================================== -->
-  <section class="section shell relative">
-    <span class="serial" aria-hidden="true">05</span>
-    <p class="catalog section__label z1">Privacy</p>
-
-    <div class="grid grid--2 z1">
-      <div class="stack">
-        <h2 class="title">Everything lives on this&nbsp;phone.</h2>
-        <p class="body measure">
-          There is no Laytr account and no Laytr server. What you save stays on
-          your phone, plus a copy in your own iCloud if you leave backup or sync on,
-          and we can read neither. Nothing passes through us, so nothing can be
-          scanned, profiled or sold.
-        </p>
-        <p><a href="/privacy">Read the full privacy policy</a></p>
+  <section class="sec" id="how" aria-labelledby="how-t">
+    <div class="wrap">
+      <div class="head">
+        <p class="home-eyebrow">How it works</p>
+        <h2 id="how-t" class="rv">Three taps now. A reminder later.</h2>
       </div>
 
-      <div class="mount">
-        <p class="catalog catalog--strong">What we never see</p>
-        <ul class="stack--tight stack" style="margin-top:var(--s-m)">
-          <li class="body">Everything you save</li>
-          <li class="body">The text Laytr reads out of your screenshots</li>
-          <li class="body">Your notes, tags, cases and favourites</li>
-          <li class="body">Every search you type</li>
-        </ul>
-        <hr class="rule" style="margin-block:var(--s-l)">
-        <p class="footnote muted">
-          Laytr&rsquo;s own network traffic is fetching the pages you saved
-          and, unless you switch them off in Settings, anonymous diagnostics
-          that can never carry your content. No advertising SDK, no tracking,
-          and no App Tracking Transparency prompt.
-        </p>
+      <div class="bento">
+        <article class="tile s2 step rv">
+          <span class="n">01</span>
+          <h3>Tap share. Tap Laytr.</h3>
+          <p>Laytr is in the share sheet of every app.</p>
+          <div class="bleed"><div class="tph"><img src="/assets/shots/phone-share.webp" alt="" width="720" height="1564" loading="lazy"></div></div>
+        </article>
+
+        <article class="tile s2 step rv">
+          <span class="n">02</span>
+          <h3>Pick when.</h3>
+          <p>Tonight, this weekend, or any day you like.</p>
+          <div class="bleed"><div class="tph"><img src="/assets/shots/phone-timeline.webp" alt="" width="720" height="1564" loading="lazy"></div></div>
+        </article>
+
+        <article class="tile s2 step t-mark rv">
+          <span class="n">03</span>
+          <h3>Laytr reminds you.</h3>
+          <p>On the day, it&rsquo;s waiting at the top of Now.</p>
+          <div class="bleed"><div class="tph"><img src="/assets/shots/phone-now.webp" alt="" width="720" height="1564" loading="lazy"></div></div>
+        </article>
+
+        <article class="tile t-ink s3 when rv">
+          <p class="home-eyebrow">When do you want it?</p>
+          <h3>You pick the day. Laytr reminds you.</h3>
+          <p>&ldquo;Not now&rdquo; sits right next to &ldquo;Done&rdquo;. No streaks, no overdue badges, no guilt.</p>
+          <div class="rows" id="rows" role="group" aria-label="Pick when Laytr reminds you">
+            <button type="button" aria-pressed="false" data-return="tonight"><span><i></i>Tonight</span><span data-return-value>Today &middot; 9:00 PM</span></button>
+            <button type="button" aria-pressed="true" data-return="weekend"><span><i></i>This weekend</span><span data-return-value>Sat &middot; 9:00 AM</span></button>
+            <button type="button" aria-pressed="false" data-return="next-week"><span><i></i>Next week</span><span data-return-value>Mon &middot; 9:00 AM</span></button>
+            <button type="button" aria-pressed="false" data-return="pick"><span><i></i>Pick a day</span><span>Any day, any time</span></button>
+            <button type="button" aria-pressed="false" data-return="someday"><span><i></i>Decide later</span><span>No date, never lost</span></button>
+          </div>
+          <p class="stamp" data-return-stamp>Times as the app sets them</p>
+        </article>
+
+        <article class="tile t-oat s3 oneplace rv">
+          <p class="home-eyebrow">Links &middot; videos &middot; recipes &middot; PDFs</p>
+          <h3>Everything you save, in one place.</h3>
+          <p>Articles, videos, places, recipes, PDFs and screenshots, each on a card that fits.</p>
+          <ul class="chips" aria-label="What a save is for"><li class="chip">Read</li><li class="chip">Watch</li><li class="chip">Visit</li><li class="chip">Cook</li><li class="chip">Buy</li><li class="chip">Try</li></ul>
+          <div class="bleed" style="--bh:300px">
+            <div class="sticker"><img src="/assets/shots/art-lisbon.webp" alt="" width="328" height="582" loading="lazy"></div>
+            <div class="tph"><img src="/assets/shots/phone-library.webp" alt="" width="720" height="1564" loading="lazy"></div>
+          </div>
+        </article>
+
+        <article class="tile t-sage s4 row cases rv">
+          <div class="txt">
+            <p class="home-eyebrow">Cases &middot; on every plan</p>
+            <h3>Your Lisbon trip, all in one case.</h3>
+            <p>Group saves by plan: a trip, the recipes, the house.</p>
+          </div>
+          <div class="bleed">
+            <div class="sticker"><img src="/assets/shots/art-buns.webp" alt="" width="566" height="388" loading="lazy"></div>
+            <div class="tph"><img src="/assets/shots/phone-case.webp" alt="" width="720" height="1564" loading="lazy"></div>
+          </div>
+        </article>
+
+        <article class="tile t-sky s2 search rv">
+          <p class="home-eyebrow">Titles &middot; notes &middot; screenshots</p>
+          <h3>Find any save by one word.</h3>
+          <p>Search reads inside articles, notes, and the words in your screenshots.</p>
+          <div class="bleed">
+            <div class="search-pill" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 20 20"/></svg>tickets</div>
+            <div class="tph" style="--pw:210px"><img src="/assets/shots/phone-search.webp" alt="" width="720" height="1564" loading="lazy"></div>
+          </div>
+        </article>
+
+        <article class="tile t-plum s6 row everywhere rv">
+          <div class="txt">
+            <p class="home-eyebrow">One save &middot; every screen</p>
+            <h3>One library on iPhone, iPad and Mac.</h3>
+            <p>Save on your phone, read it on your Mac. Sync runs through your own iCloud, free on every plan.</p>
+            <ul class="devchips" aria-label="Devices"><li>iPhone</li><li>iPad</li><li>Mac</li></ul>
+          </div>
+          <div class="devices" aria-hidden="true">
+            <div class="mac"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/shots/mac-library.webp" alt="" width="1800" height="1125" loading="lazy"></div>
+            <div class="ipad"><img src="/assets/shots/ipad-now.webp" alt="" width="1100" height="1467" loading="lazy"></div>
+            <div class="tph"><img src="/assets/shots/phone-now.webp" alt="" width="720" height="1564" loading="lazy"></div>
+          </div>
+        </article>
+
+        <article class="tile t-paper s4 private rv" id="private">
+          <p class="home-eyebrow">Private by design</p>
+          <h3>No account. No server of ours.</h3>
+          <p>Your saves live on your devices and in your own iCloud. We can&rsquo;t read them.</p>
+          <div class="points">
+            <div class="point"><div class="dot"><svg aria-hidden="true"><use href="#m"/></svg></div><b>No sign-up</b><p>Open the app and save.</p></div>
+            <div class="point"><div class="dot"><svg aria-hidden="true"><use href="#m"/></svg></div><b>Nothing passes through us</b><p>There is no Laytr server.</p></div>
+            <div class="point"><div class="dot"><svg aria-hidden="true"><use href="#m"/></svg></div><b>No ads, no tracking</b><p>Nothing to sell, nobody to sell it to.</p></div>
+          </div>
+          <a class="textlink" href="/privacy">Read the privacy policy</a>
+        </article>
+
+        <article class="tile t-tomato s2 pocket rv">
+          <p class="home-eyebrow">Leaving Pocket?</p>
+          <h3>Bring your saves with you.</h3>
+          <p>Import from Pocket, Instapaper or Omnivore in one go.</p>
+          <div class="plinks">
+            <a href="/pocket-alternative">Coming from Pocket &rarr;</a>
+            <a href="/instapaper-alternative">Coming from Instapaper &rarr;</a>
+          </div>
+        </article>
+
+        <article class="tile t-ink s6 row since rv">
+          <div>
+            <p class="home-eyebrow">Since 9to5Mac wrote about us</p>
+            <h3>In August, Laytr was an iPhone app. Look at it now.</h3>
+          </div>
+          <ul class="since-list">
+            <li><b>iPad</b><span>A real iPad layout.</span></li>
+            <li><b>Mac</b><span>Save from Safari or the menu bar.</span></li>
+            <li><b>Sync</b><span>One library, through your iCloud.</span></li>
+            <li><b>Imports</b><span>Pocket, Instapaper, Omnivore.</span></li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
@@ -405,177 +292,135 @@
   <!-- ===================================================================
        Pricing
        =================================================================== -->
-  <section class="section shell relative">
-    <span class="serial" aria-hidden="true">06</span>
-    <p class="catalog section__label z1">Pricing</p>
-
-    <h2 class="title z1">Free holds 30 saves. Premium removes the&nbsp;limit.</h2>
-    <p class="body measure z1" style="margin-top:var(--s-l)">
-      That is the only difference between them. With no server to run, a
-      subscription pays for the work of building the app, which is also why a
-      one-time lifetime price can exist.
-    </p>
-
-    <div class="plans" style="margin-top:var(--s-xl)">
-      <div class="plan">
-        <p class="catalog catalog--strong">Free</p>
-        <p class="plan__price">$0</p>
-        <p class="plan__period">up to 30 saves</p>
-        <p class="plan__note">Reading, search and export are never limited.</p>
+  <section class="sec" id="pricing" aria-labelledby="pricing-t">
+    <div class="wrap">
+      <div class="head">
+        <p class="home-eyebrow">Pricing</p>
+        <h2 id="pricing-t" class="rv">Free for 30 saves. Premium for everything.</h2>
+        <p class="lede rv">The limit is the only difference.</p>
       </div>
 
-      
-      <div class="plan">
+      <div class="plans">
+        <div class="plan rv">
+          <p class="nm">Free</p>
+          <p class="pr">$0</p>
+          <p class="per">up to 30 saves</p>
+          <p class="nt">Reading, search and export are never limited.</p>
+        </div>
         
-        <p class="catalog catalog--strong">Monthly</p>
-        <p class="plan__price">$1.99</p>
-        <p class="plan__period">per month</p>
-        <p class="plan__note">Renews monthly until cancelled.</p>
-      </div>
-      
-      <div class="plan">
-        <span class="sticker plan__badge">Best value</span>
-        <p class="catalog catalog--strong">Annual</p>
-        <p class="plan__price">$14.99</p>
-        <p class="plan__period">per year</p>
-        <p class="plan__note">Renews yearly until cancelled.</p>
-      </div>
-      
-      <div class="plan">
+        <div class="plan rv">
+          
+          
+          <p class="nm">monthly</p>
+          <p class="pr">$1.99</p>
+          <p class="per">per month</p>
+          <p class="nt">Renews monthly until cancelled.</p>
+        </div>
         
-        <p class="catalog catalog--strong">Launch offer</p>
-        <p class="plan__price">$24.99 <s class="plan__was">$39.99</s></p>
-        <p class="plan__period">once</p>
-        <p class="plan__note">The launch-window price for Lifetime. One payment, no renewal.</p>
+        <div class="plan rv">
+          <span class="bd">Best value</span>
+          
+          <p class="nm">annual</p>
+          <p class="pr">$14.99</p>
+          <p class="per">per year</p>
+          <p class="nt">Renews yearly until cancelled.</p>
+        </div>
+        
+        <div class="plan rv hot">
+          
+          <span class="bd">Launch offer</span>
+          <p class="nm">lifetime</p>
+          <p class="pr">$24.99 <s>$39.99</s></p>
+          <p class="per">once</p>
+          <p class="nt">The launch-window price for Lifetime. One payment, no renewal.</p>
+        </div>
+        
       </div>
-      
-    </div>
 
-    
-    <div class="mount" style="margin-top:var(--s-l)">
-      <p class="catalog catalog--strong">Launch offer</p>
-      <p class="body" style="margin-top:var(--s-s)">
-        Lifetime is $24.99 instead of
-        $39.99 for people who arrive early. One
-        payment, no renewal.
-        
-        The offer runs until 31 December 2026.
-        
+      <div class="promises">
+        <div class="promise rv"><svg aria-hidden="true"><use href="#m"/></svg><div><b>Cancelling never locks anything.</b><p>You keep reading, searching and exporting everything.</p></div></div>
+        <div class="promise rv"><svg aria-hidden="true"><use href="#m"/></svg><div><b>Export is never behind the paywall.</b><p>Your whole archive, as one ZIP, on any plan.</p></div></div>
+      </div>
+
+      <p class="fine">
+        The launch price for Lifetime runs until 31 December 2026. Prices are U.S. dollars. Your local price is set by the App Store and shown before you buy.
       </p>
     </div>
-    
+  </section>
 
-    <p class="footnote muted" style="margin-top:var(--s-l)">Prices are U.S. dollars. Your local price is set by the App Store and shown before you buy.</p>
-
-    <div class="grid grid--2" style="margin-top:var(--s-xxl)">
-      <div class="mount stack--tight stack">
-        <p class="catalog catalog--strong">Promise one</p>
-        <h3 class="headline">Cancelling never deletes or locks anything.</h3>
-        <p class="body">
-          You keep reading, searching and exporting every save. Only
-          <em>adding</em> stops, until you are back under
-          30 or back on a plan.
-        </p>
+  <!-- ===================================================================
+       Questions
+       =================================================================== -->
+  <section class="sec" aria-labelledby="faq-t">
+    <div class="wrap">
+      <div class="head">
+        <p class="home-eyebrow">Questions</p>
+        <h2 id="faq-t" class="rv">Good to know before you install.</h2>
       </div>
-      <div class="mount stack--tight stack">
-        <p class="catalog catalog--strong">Promise two</p>
-        <h3 class="headline">Export is never behind the paywall.</h3>
-        <p class="body">
-          One ZIP: readable Markdown and HTML, your notes and tags, your
-          articles, your original files. Free, on any plan or none.
-        </p>
+      <div class="faqcols">
+        <div>
+          <details><summary>Do I need an account?</summary><p>No. Sync uses the Apple Account you&rsquo;re already signed in to.</p></details>
+          <details><summary>Does it save the whole article?</summary><p>Yes. The full text and pictures, so it still opens after the page is gone.</p></details>
+          <details><summary>Does Laytr download videos?</summary><p>No. A video is saved as a link with its title and picture.</p></details>
+        </div>
+        <div>
+          <details><summary>Does it get around paywalls?</summary><p>No, never.</p></details>
+          <details><summary>Is there AI or auto-tagging?</summary><p>Not in this version. Laytr files things the way you tell it to.</p></details>
+          <details><summary>What happens if I stop paying?</summary><p>Nothing is deleted, hidden or locked. Only adding pauses above 30 saves.</p></details>
+        </div>
       </div>
+      <p class="fine">More answers on the <a href="/support">support page</a>.</p>
     </div>
   </section>
 
   <!-- ===================================================================
-       What Laytr does not do
+       Final
        =================================================================== -->
-  <section class="section shell relative">
-    <span class="serial" aria-hidden="true">07</span>
-    <p class="catalog section__label z1">The honest list</p>
-
-    <div class="grid grid--2 z1">
-      <div class="stack">
-        <h2 class="title">What Laytr deliberately does&nbsp;not do.</h2>
-        <p class="body measure">
-          Most of these are boundaries rather than gaps, and better known
-          before you install.
-        </p>
-        <p><a href="/support#limits">The full list, with reasons</a></p>
-      </div>
-
-      <div>
-        <ul class="ledger">
-                    <li class="ledger__row"><span class="ledger__name">No AI or auto-tagging</span><span class="ledger__when muted">Not in version 1</span></li>
-          <li class="ledger__row"><span class="ledger__name">No downloading platform video</span><span class="ledger__when muted">Saved as a link</span></li>
-          <li class="ledger__row"><span class="ledger__name">No paywall bypassing</span><span class="ledger__when muted">Ever</span></li>
-          <li class="ledger__row"><span class="ledger__name">No feed or recommendations</span><span class="ledger__when muted">Your archive only</span></li>
-          <li class="ledger__row"><span class="ledger__name">No watch app and no widgets</span><span class="ledger__when muted">Not in version 1</span></li>
-        </ul>
+  <section class="sec" aria-labelledby="final-t">
+    <div class="wrap">
+      <div class="finalpanel onlime rv">
+        <svg class="bigmark" aria-hidden="true"><use href="#m"/></svg>
+        <h2 id="final-t">Save now. Come back Laytr.</h2>
+        <p>Free on the App Store for iPhone, iPad and Mac.</p>
+        
+        <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8"><svg aria-hidden="true"><use href="#m"/></svg>Get Laytr on the App&nbsp;Store</a>
+        
       </div>
     </div>
   </section>
-
-  <!-- ===================================================================
-       Close
-       =================================================================== -->
-  <section class="section shell center">
-    <span class="mark mark--lg" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
-<rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(0.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(60.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-  <rect x="98.00" y="10.00" width="44.00" height="220.00" rx="22.00" transform="rotate(120.0 120.00 120.00)" fill="var(--laytr-mark)"/>
-</svg></span>
-    <h2 class="display" style="margin-top:var(--s-l)">Save&nbsp;now.<br>Come back Laytr.</h2>
-    <div style="display:flex;justify-content:center"><!-- The call to action, in the only three honest states there are.
-
-     There is deliberately no hand-drawn "Download on the App Store" button.
-     Apple's marketing guidelines require the official badge artwork, unmodified,
-     and forbid recreating it; the badge is added by the owner as an image once
-     the App Store record exists (website/README.md, "Update the App Store link").
-     Until then the page says plainly that the app is not on the store yet,
-     rather than showing a button that goes nowhere. -->
-<div class="btn-row hero__actions">
-  
-  <a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a>
-  
-
-  
-</div>
-
-</div>
-  </section>
-
 </main>
 
 <footer class="colophon">
   <div class="shell">
     <div class="colophon__grid">
-      <div class="stack--tight stack">
+      <div class="stack">
         <span class="wordmark" aria-hidden="true"><svg role="img" aria-label="laytr" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -10 534 240" width="534" height="240">
 <path fill="currentColor" d="M11.27 160.0 L11.27 24.0 L39.74 24.0 L39.74 160.0 Z M90.55 162.38 C81.53 162.38 74.29 160.28 68.85 156.09 C63.4 151.91 59.48 146.02 57.09 138.44 C54.7 130.86 53.51 121.94 53.51 111.69 C53.51 101.35 54.71 92.34 57.13 84.63 C59.55 76.93 63.48 70.93 68.93 66.64 C74.37 62.34 81.58 60.19 90.55 60.19 C96.77 60.19 101.87 61.06 105.84 62.79 C109.82 64.52 112.99 66.57 115.37 68.93 C117.74 71.29 119.49 73.48 120.6 75.49 C121.71 77.51 122.39 78.81 122.63 79.4 L123.08 79.4 L123.08 60.4 L153.15 60.4 L153.15 160.0 L127.75 160.0 L123.12 145.1 L122.63 145.1 C122.5 145.69 121.84 146.9 120.66 148.73 C119.48 150.55 117.67 152.52 115.23 154.63 C112.78 156.73 109.55 158.55 105.52 160.08 C101.5 161.61 96.5 162.38 90.55 162.38 Z M102.74 138.1 C108.52 138.1 112.86 136.91 115.77 134.54 C118.68 132.16 120.62 128.95 121.59 124.91 C122.55 120.87 123.04 116.55 123.04 111.93 C123.04 107.04 122.54 102.62 121.55 98.66 C120.55 94.7 118.6 91.58 115.69 89.3 C112.78 87.02 108.46 85.88 102.74 85.88 C96.87 85.88 92.44 87.1 89.46 89.54 C86.48 91.99 84.5 95.16 83.52 99.07 C82.54 102.97 82.05 107.25 82.05 111.89 C82.05 116.56 82.55 120.89 83.54 124.87 C84.53 128.86 86.52 132.06 89.5 134.48 C92.48 136.89 96.89 138.1 102.74 138.1 Z M157.78 207.06 L157.78 184.72 L173.84 184.72 C176.21 184.72 178.37 184.55 180.35 184.2 C182.32 183.85 184.26 182.71 186.16 180.79 C188.07 178.88 190.06 175.57 192.12 170.87 L196.87 160.2 L158.06 60.4 L188.02 60.4 L210.96 130.53 L235.85 60.4 L265.84 60.4 L218.82 173.41 C215.67 180.92 212.77 186.91 210.1 191.36 C207.43 195.82 204.63 199.17 201.7 201.43 C198.78 203.68 195.46 205.19 191.74 205.94 C188.02 206.69 183.56 207.06 178.35 207.06 Z M310.73 160.0 C302.01 160.0 295.24 157.91 290.42 153.72 C285.6 149.53 283.19 142.27 283.19 131.94 L283.19 77.63 L310.45 77.63 L310.45 137.45 L333.6 137.45 L333.6 160.0 Z M268.78 80.53 L268.78 60.4 C271.95 60.4 274.66 60.13 276.93 59.61 C279.2 59.09 281.11 58.0 282.65 56.35 C284.19 54.7 285.34 52.17 286.09 48.76 C286.84 45.35 287.22 40.78 287.22 35.03 L310.45 35.03 L310.45 60.4 L332.99 60.4 L332.99 80.53 Z M348.9 160.0 L348.9 60.4 L376.31 60.4 L378.37 89.42 L378.13 111.0 L378.13 160.0 Z M378.13 118.65 L377.4 96.43 C377.35 93.31 377.91 89.7 379.09 85.58 C380.27 81.46 382.3 77.49 385.17 73.66 C388.04 69.84 391.99 66.67 397.01 64.16 C402.03 61.65 408.28 60.4 415.77 60.4 L418.59 60.4 L418.59 92.8 L415.57 92.8 C409.15 92.8 403.56 93.19 398.78 93.97 C394.0 94.75 390.12 96.07 387.12 97.94 C384.13 99.8 381.88 102.43 380.38 105.81 C378.88 109.19 378.13 113.47 378.13 118.65 Z"/>
 <rect x="471.99" y="25.00" width="13.20" height="66.00" rx="6.60" transform="rotate(0.0 478.59 58.00)" fill="var(--laytr-mark)"/>
   <rect x="471.99" y="25.00" width="13.20" height="66.00" rx="6.60" transform="rotate(60.0 478.59 58.00)" fill="var(--laytr-mark)"/>
   <rect x="471.99" y="25.00" width="13.20" height="66.00" rx="6.60" transform="rotate(120.0 478.59 58.00)" fill="var(--laytr-mark)"/>
 </svg></span>
-        <p class="footnote muted">Save now. Come back Laytr.</p>
-        <p class="catalog">iPhone, iPad and Mac</p>
+        <p class="headline">Save now. Come back Laytr.</p>
+        <p class="footnote muted measure">For iPhone, iPad and Mac. Made by a small independent team, with no Laytr account and no Laytr server.</p>
+        <p><a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a></p>
       </div>
 
       <div>
-        <p class="catalog" id="colophon-app">The app</p>
-        <ul class="colophon__links stack--tight" style="margin-top:var(--s-m)" aria-labelledby="colophon-app">
+        <p class="catalog catalog--strong" id="colophon-app">The app</p>
+        <ul class="colophon__links" style="margin-top:var(--s-l)" aria-labelledby="colophon-app">
           <li><a href="/">Overview</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/pocket-alternative">Coming from Pocket</a></li>
+          <li><a href="/instapaper-alternative">Coming from Instapaper</a></li>
           <li><a href="/support">Support</a></li>
           <li><a href="/press">Press kit</a></li>
-          <li><a href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">View on the App Store</a></li>
           
         </ul>
       </div>
 
       <div>
-        <p class="catalog" id="colophon-legal">Legal</p>
-        <ul class="colophon__links stack--tight" style="margin-top:var(--s-m)" aria-labelledby="colophon-legal">
+        <p class="catalog catalog--strong" id="colophon-legal">Legal</p>
+        <ul class="colophon__links" style="margin-top:var(--s-l)" aria-labelledby="colophon-legal">
           <li><a href="/privacy">Privacy policy</a></li>
           <li><a href="/terms">Terms of use</a></li>
           <li><a href="mailto:support@laytr.app">support@laytr.app</a></li>
@@ -584,12 +429,13 @@
     </div>
 
     <div class="colophon__fine">
-      <p class="footnote muted">&copy; 2026 Waitery Inc. Laytr is an iPhone app. Nothing you save in it is uploaded to us; there is no Laytr server to upload it to.</p>
-      <p class="footnote muted">Apple, iPhone, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries. Laytr is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
+      <p class="footnote muted">&copy; 2026 Waitery Inc.</p>
+      <p class="footnote muted">Apple, iPhone, iPad, Mac, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries. Laytr is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
     </div>
   </div>
 </footer>
 <script src="/assets/js/ledger.js" defer></script>
+<script src="/assets/js/home.js" defer></script>
 </body>
 </html>
 
