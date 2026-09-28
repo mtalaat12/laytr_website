@@ -131,6 +131,9 @@ img,
 svg {
   display: block;
   max-width: 100%;
+  /* without this, an img keeps its height attribute (1125px, 582px…) while
+     max-width shrinks its width, and every sticker and device shot stretches */
+  height: auto;
 }
 
 a {
@@ -1679,6 +1682,14 @@ main.section {
   align-items: center;
   padding-left: 10px;
   border-bottom: 1px solid #d6d6d6;
+}
+
+/* the capture's sidebar (the left 326 of 1800 px) is empty: crop it off */
+.mac img {
+  width: 100%;
+  aspect-ratio: 1474 / 1125;
+  object-fit: cover;
+  object-position: right top;
 }
 
 .mac .bar i {
