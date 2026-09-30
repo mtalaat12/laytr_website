@@ -1,15 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Laytr — Save anything. Laytr reminds you when.</title>
 <meta name="description" content="Links, recipes, videos, screenshots and PDFs from any app, in one place on your iPhone, iPad and Mac. Pick a day and Laytr reminds you. No account, no ads.">
 <link rel="canonical" href="https://laytr.app">
+<link rel="alternate" hreflang="en" href="https://laytr.app/">
+<link rel="alternate" hreflang="de" href="https://laytr.app/de/">
+<link rel="alternate" hreflang="fr" href="https://laytr.app/fr/">
+<link rel="alternate" hreflang="es" href="https://laytr.app/es/">
+<link rel="alternate" hreflang="ar" href="https://laytr.app/ar/">
+<link rel="alternate" hreflang="it" href="https://laytr.app/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://laytr.app/pt-br/">
+<link rel="alternate" hreflang="x-default" href="https://laytr.app/">
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="910486c42697">
+<meta name="laytr-build" content="d1ab234d8dde">
 
 
 <meta property="og:type" content="website">
@@ -27,7 +35,7 @@
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/app-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/laytr.css?v=910486c42697">
+<link rel="stylesheet" href="/assets/css/laytr.css?v=d1ab234d8dde">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -290,6 +298,97 @@
   </section>
 
   <!-- ===================================================================
+       Languages (iOS 1.0.13). Every word on a card is the app's own, from
+       content/languages.json (tools/prepare_languages.py reads the app's
+       translation files), so the page shows what the app says. Each card
+       carries lang and dir, so Arabic is set right to left.
+       =================================================================== -->
+  <section class="sec" id="languages" aria-labelledby="languages-t">
+    <div class="wrap">
+      <div class="head">
+        <p class="home-eyebrow">Languages</p>
+        <h2 id="languages-t" class="rv">Laytr now speaks seven languages.</h2>
+        <p class="lede rv">On iPhone and iPad, from version 1.0.13. Each card is the app in that language, in its own words.</p>
+      </div>
+
+      <ul class="langs">
+        
+        <li class="lang lang--en rv" lang="en" dir="ltr">
+          <div class="lang__card">
+            <span class="lang__code" aria-hidden="true" dir="ltr">EN</span>
+            <span class="lang__name">English</span>
+            <span class="lang__pill"><i aria-hidden="true"></i>This weekend</span>
+            <span class="lang__tabs"><b>Now</b> <span>Timeline</span> <span>Library</span> <span>Search</span></span>
+          </div>
+        </li>
+        
+        <li class="lang lang--de rv" lang="de" dir="ltr">
+          <a class="lang__card" href="/de/" hreflang="de">
+            <span class="lang__code" aria-hidden="true" dir="ltr">DE</span>
+            <span class="lang__name">Deutsch</span>
+            <span class="lang__pill"><i aria-hidden="true"></i>Dieses Wochenende</span>
+            <span class="lang__tabs"><b>Jetzt</b> <span>Zeitplan</span> <span>Bibliothek</span> <span>Suche</span></span>
+          </a>
+        </li>
+        
+        <li class="lang lang--fr rv" lang="fr" dir="ltr">
+          <a class="lang__card" href="/fr/" hreflang="fr">
+            <span class="lang__code" aria-hidden="true" dir="ltr">FR</span>
+            <span class="lang__name">Français</span>
+            <span class="lang__pill"><i aria-hidden="true"></i>Ce week-end</span>
+            <span class="lang__tabs"><b>Maintenant</b> <span>Agenda</span> <span>Bibliothèque</span> <span>Recherche</span></span>
+          </a>
+        </li>
+        
+        <li class="lang lang--es rv" lang="es" dir="ltr">
+          <a class="lang__card" href="/es/" hreflang="es">
+            <span class="lang__code" aria-hidden="true" dir="ltr">ES</span>
+            <span class="lang__name">Español</span>
+            <span class="lang__pill"><i aria-hidden="true"></i>Este fin de semana</span>
+            <span class="lang__tabs"><b>Ahora</b> <span>Agenda</span> <span>Biblioteca</span> <span>Buscar</span></span>
+          </a>
+        </li>
+        
+        <li class="lang lang--ar rv" lang="ar" dir="rtl">
+          <a class="lang__card" href="/ar/" hreflang="ar">
+            <span class="lang__code" aria-hidden="true" dir="ltr">AR</span>
+            <span class="lang__name">العربية</span>
+            <span class="lang__pill"><i aria-hidden="true"></i>نهاية هذا الأسبوع</span>
+            <span class="lang__tabs"><b>الآن</b> <span>الجدول الزمني</span> <span>المكتبة</span> <span>البحث</span></span>
+          </a>
+        </li>
+        
+        <li class="lang lang--it rv" lang="it" dir="ltr">
+          <a class="lang__card" href="/it/" hreflang="it">
+            <span class="lang__code" aria-hidden="true" dir="ltr">IT</span>
+            <span class="lang__name">Italiano</span>
+            <span class="lang__pill"><i aria-hidden="true"></i>Questo weekend</span>
+            <span class="lang__tabs"><b>Adesso</b> <span>Agenda</span> <span>Libreria</span> <span>Cerca</span></span>
+          </a>
+        </li>
+        
+        <li class="lang lang--pt-BR rv" lang="pt-BR" dir="ltr">
+          <a class="lang__card" href="/pt-br/" hreflang="pt-BR">
+            <span class="lang__code" aria-hidden="true" dir="ltr">PT-BR</span>
+            <span class="lang__name">Português (Brasil)</span>
+            <span class="lang__pill"><i aria-hidden="true"></i>Este fim de semana</span>
+            <span class="lang__tabs"><b>Agora</b> <span>Agenda</span> <span>Biblioteca</span> <span>Buscar</span></span>
+          </a>
+        </li>
+        
+        <li class="lang lang--how rv">
+          <div class="lang__card">
+            <span class="lang__code" aria-hidden="true">Choosing</span>
+            <span class="lang__name">It follows your device.</span>
+            <span class="lang__text">For a different language in Laytr only:</span>
+            <span class="crumbs"><span>Settings</span> &rsaquo; <span>Apps</span> &rsaquo; <span>Laytr</span> &rsaquo; <span>Language</span></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================================================================
        Pricing
        =================================================================== -->
   <section class="sec" id="pricing" aria-labelledby="pricing-t">
@@ -367,6 +466,7 @@
           <details><summary>Does it get around paywalls?</summary><p>No, never.</p></details>
           <details><summary>Is there AI or auto-tagging?</summary><p>Not in this version. Laytr files things the way you tell it to.</p></details>
           <details><summary>What happens if I stop paying?</summary><p>Nothing is deleted, hidden or locked. Only adding pauses above 30 saves.</p></details>
+          <details><summary>Which languages does Laytr speak?</summary><p>English, German, French, Spanish, Arabic, Italian and Portuguese (Brazil) on iPhone and iPad. The Mac app is in English.</p></details>
         </div>
       </div>
       <p class="fine">More answers on the <a href="/support">support page</a>.</p>
@@ -429,13 +529,22 @@
     </div>
 
     <div class="colophon__fine">
+      <!-- The language switcher, in every footer. Each name is written in its own
+     language and script, with lang/dir so it is read and set correctly;
+     the page's own language is marked rather than linked to itself. -->
+<nav class="langbar" aria-label="Languages">
+  <ul>
+    <li><span class="langbar__item" lang="en" dir="ltr" aria-current="page">English</span></li><li><a class="langbar__item" href="/de/" hreflang="de" lang="de" dir="ltr">Deutsch</a></li><li><a class="langbar__item" href="/fr/" hreflang="fr" lang="fr" dir="ltr">Français</a></li><li><a class="langbar__item" href="/es/" hreflang="es" lang="es" dir="ltr">Español</a></li><li><a class="langbar__item" href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a></li><li><a class="langbar__item" href="/it/" hreflang="it" lang="it" dir="ltr">Italiano</a></li><li><a class="langbar__item" href="/pt-br/" hreflang="pt-BR" lang="pt-BR" dir="ltr">Português (Brasil)</a></li>
+  </ul>
+</nav>
+
       <p class="footnote muted">&copy; 2026 Waitery Inc.</p>
       <p class="footnote muted">Apple, iPhone, iPad, Mac, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries. Laytr is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
     </div>
   </div>
 </footer>
-<script src="/assets/js/ledger.js?v=910486c42697" defer></script>
-<script src="/assets/js/home.js?v=910486c42697" defer></script>
+<script src="/assets/js/ledger.js?v=d1ab234d8dde" defer></script>
+<script src="/assets/js/home.js?v=d1ab234d8dde" defer></script>
 </body>
 </html>
 

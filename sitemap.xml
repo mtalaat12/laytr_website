@@ -32,4 +32,28 @@
     <loc>https://laytr.app/welcome</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://laytr.app/de/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laytr.app/fr/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laytr.app/es/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laytr.app/ar/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laytr.app/it/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laytr.app/pt-br/</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

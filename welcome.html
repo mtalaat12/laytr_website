@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Welcome — Laytr</title>
 <meta name="description" content="The practice page Laytr saves during onboarding, so your first save is a real one.">
 <link rel="canonical" href="https://laytr.app/welcome">
+
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="910486c42697">
+<meta name="laytr-build" content="d1ab234d8dde">
 
 
 <meta property="og:type" content="website">
@@ -27,7 +28,7 @@
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/app-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/laytr.css?v=910486c42697">
+<link rel="stylesheet" href="/assets/css/laytr.css?v=d1ab234d8dde">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -157,12 +158,21 @@
     </div>
 
     <div class="colophon__fine">
+      <!-- The language switcher, in every footer. Each name is written in its own
+     language and script, with lang/dir so it is read and set correctly;
+     the page's own language is marked rather than linked to itself. -->
+<nav class="langbar" aria-label="Languages">
+  <ul>
+    <li><a class="langbar__item" href="/" hreflang="en" lang="en" dir="ltr">English</a></li><li><a class="langbar__item" href="/de/" hreflang="de" lang="de" dir="ltr">Deutsch</a></li><li><a class="langbar__item" href="/fr/" hreflang="fr" lang="fr" dir="ltr">Français</a></li><li><a class="langbar__item" href="/es/" hreflang="es" lang="es" dir="ltr">Español</a></li><li><a class="langbar__item" href="/ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a></li><li><a class="langbar__item" href="/it/" hreflang="it" lang="it" dir="ltr">Italiano</a></li><li><a class="langbar__item" href="/pt-br/" hreflang="pt-BR" lang="pt-BR" dir="ltr">Português (Brasil)</a></li>
+  </ul>
+</nav>
+
       <p class="footnote muted">&copy; 2026 Waitery Inc.</p>
       <p class="footnote muted">Apple, iPhone, iPad, Mac, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries. Laytr is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
     </div>
   </div>
 </footer>
-<script src="/assets/js/ledger.js?v=910486c42697" defer></script>
+<script src="/assets/js/ledger.js?v=d1ab234d8dde" defer></script>
 
 </body>
 </html>

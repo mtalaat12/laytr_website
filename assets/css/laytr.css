@@ -2257,6 +2257,540 @@ main.section {
   transform: translateY(-3px);
 }
 
+/* =========================================================================
+   9b. Languages (iOS 1.0.13): the homepage cards, the footer switcher and
+       the localized landing pages (/de/, /fr/, /es/, /ar/, /it/, /pt-br/).
+       Every surface here reuses the bento's plates and palette; nothing
+       new is introduced but the arrangement.
+   ========================================================================= */
+
+/* Arabic. The system face first (SF Arabic on Apple devices, reached through
+   -apple-system), then the Arabic faces Windows, Android and Linux ship. No
+   web font: the CSP allows none, and every platform has one of these.
+   Tracking is forced to zero because any letter-spacing breaks the joins
+   between Arabic letters, and there is no case to transform. The mono
+   catalog layer has no Arabic glyphs, so it falls back to the same stack. */
+:root {
+  --arabic: -apple-system, BlinkMacSystemFont, "SF Arabic", "Geeza Pro",
+    "Noto Sans Arabic", "Noto Naskh Arabic", "Segoe UI", Tahoma, sans-serif;
+}
+
+:lang(ar),
+:lang(ar) * {
+  font-family: var(--arabic) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+:lang(ar) h1,
+:lang(ar) h2,
+:lang(ar) h3 {
+  line-height: 1.35 !important;
+}
+
+/* ---- homepage: one card per language ---- */
+
+.langs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.lang__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  height: 100%;
+  min-height: 248px;
+  padding: 22px;
+  border: 3px solid var(--ink);
+  border-radius: var(--r-card);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: var(--plate);
+  text-decoration: none;
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+a.lang__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 9px 11px 0 var(--ink);
+}
+
+.lang__code {
+  font: 700 12px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--white);
+  padding: 6px 9px;
+  border-radius: 7px;
+}
+
+.lang__name {
+  font-size: clamp(26px, 2.3vw, 34px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.lang__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 2px solid var(--ink);
+  /* not 999px: a long return label ("Dieses Wochenende") can wrap in a
+     narrow card, and a pill radius then pinches it into a lozenge */
+  border-radius: 16px;
+  padding: 6px 13px 6px 9px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.lang__pill i {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: var(--mark);
+}
+
+/* the app's tab bar, the first tab selected, as it is on launch */
+.lang__tabs {
+  margin-top: auto;
+  align-self: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 2px solid currentColor;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.lang__tabs > * {
+  padding: 5px 8px;
+  border-radius: 8px;
+}
+
+.lang__tabs b {
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.lang--de .lang__card {
+  background: var(--oat);
+}
+.lang--fr .lang__card {
+  background: var(--sky);
+}
+.lang--es .lang__card {
+  background: var(--sage);
+}
+.lang--it .lang__card {
+  background: var(--tomato);
+}
+.lang--pt-BR .lang__card {
+  background: var(--mark);
+}
+.lang--ar .lang__card {
+  background: var(--plum);
+  color: var(--white);
+}
+.lang--ar .lang__code,
+.lang--ar .lang__tabs b,
+.lang--how .lang__code {
+  background: var(--mark);
+  color: var(--ink);
+}
+.lang--ar .lang__tabs span {
+  color: var(--on-plum-soft);
+}
+
+/* the eighth cell: how to pick one */
+.lang--how .lang__card {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.lang__text {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--on-dark-soft);
+}
+
+.crumbs {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 5px;
+  color: var(--mark);
+  font-weight: 800;
+}
+
+.crumbs span {
+  font: 700 12px/1 var(--mono);
+  letter-spacing: 0.06em;
+  padding: 7px 9px;
+  border: 2px solid var(--mark);
+  border-radius: 8px;
+  color: var(--white);
+}
+
+.crumbs span:last-child {
+  background: var(--mark);
+  color: var(--ink);
+}
+
+@media (max-width: 1023px) {
+  .langs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .langs {
+    gap: 12px;
+  }
+  .lang__card {
+    min-height: 0;
+    padding: 16px;
+    gap: 12px;
+  }
+  .lang__name {
+    font-size: 22px;
+  }
+  .lang__pill {
+    font-size: 13px;
+  }
+  .lang__tabs {
+    font-size: 12px;
+    gap: 4px;
+  }
+}
+
+/* ---- footer: the language switcher ---- */
+
+.langbar {
+  margin-bottom: var(--s-xl);
+}
+
+.langbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.langbar__item {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+a.langbar__item:hover {
+  background: var(--mark);
+}
+
+.langbar__item[aria-current="page"] {
+  background: var(--ink);
+  color: var(--white);
+}
+
+/* ---- the localized landing pages ---- */
+
+.loc-hero {
+  padding-top: clamp(40px, 6vw, 88px);
+}
+
+.loc-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: clamp(36px, 5vw, 80px);
+  align-items: center;
+}
+
+.loc-hero h1 {
+  margin-top: 24px;
+  font-size: clamp(40px, 5.2vw, 76px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  max-width: 13ch;
+}
+
+.loc-hero .lede {
+  margin-top: 24px;
+  max-width: 38ch;
+}
+
+.loc-hero .cta {
+  margin-top: 32px;
+}
+
+.loc-hero .cta-note {
+  max-width: 38ch;
+}
+
+/* the app's return sheet and tab bar, drawn in the page's language */
+.loc-screen {
+  justify-self: center;
+  width: min(100%, 340px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 14px 14px;
+  border: 3px solid var(--ink);
+  border-radius: 44px;
+  background: var(--paper);
+  box-shadow: var(--plate-lg);
+  transform: rotate(2deg);
+}
+
+[dir="rtl"] .loc-screen {
+  transform: rotate(-2deg);
+}
+
+.loc-screen__sheet {
+  background: var(--ink);
+  color: var(--white);
+  border-radius: 30px;
+  padding: 24px 16px 18px;
+}
+
+.loc-screen__q {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 4px 16px;
+}
+
+.loc-screen__rows li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 2px solid var(--on-dark-soft);
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.loc-screen__rows li + li {
+  margin-top: 8px;
+}
+
+.loc-screen__rows i {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pile-line);
+}
+
+.loc-screen__rows li.on {
+  background: var(--mark);
+  border-color: var(--mark);
+}
+
+.loc-screen__rows li.on i {
+  background: var(--ink);
+}
+
+.loc-screen__tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  padding: 0 2px;
+}
+
+.loc-screen__tabs li {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.2;
+  padding: 9px 3px;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.loc-screen__tabs li.on {
+  background: var(--mark);
+  font-weight: 750;
+}
+
+/* the listing's sections, in its order, as a bento */
+.loc-sec {
+  padding-top: clamp(64px, 8vw, 120px);
+}
+
+.loc-tile {
+  gap: 0;
+}
+
+.loc-tile .n {
+  align-self: flex-start;
+  font: 700 13px/1 var(--mono);
+  letter-spacing: 0.12em;
+  background: var(--ink);
+  color: var(--white);
+  padding: 7px 10px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.loc-tile h2 {
+  font-size: clamp(20px, 1.7vw, 25px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0;
+  max-width: 24ch;
+}
+
+.loc-tile p {
+  font-size: 17px;
+  margin-top: 14px;
+  max-width: 52ch;
+}
+
+.k-private {
+  --s: 3;
+  background: var(--paper);
+}
+.k-anywhere {
+  --s: 3;
+  background: var(--oat);
+}
+.k-when {
+  --s: 6;
+  background: var(--ink);
+  color: var(--white);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  grid-template-areas: "n p" "h p";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(24px, 4vw, 56px);
+}
+.k-when .n {
+  grid-area: n;
+  justify-self: start;
+}
+.k-when h2 {
+  grid-area: h;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--mark);
+}
+.k-when p {
+  grid-area: p;
+  margin-top: 0;
+  font-size: 19px;
+  color: var(--on-dark-soft);
+}
+.k-read {
+  --s: 2;
+  background: var(--sage);
+}
+.k-search {
+  --s: 2;
+  background: var(--sky);
+}
+.k-library {
+  --s: 2;
+  background: var(--plum);
+  color: var(--white);
+}
+.k-library p {
+  color: var(--on-plum-soft);
+}
+.k-export {
+  --s: 3;
+  background: var(--white);
+}
+.k-free {
+  --s: 3;
+  background: var(--mark);
+}
+.k-when .n,
+.k-library .n {
+  background: var(--mark);
+  color: var(--ink);
+}
+
+.loc .finalpanel .loc-tagline {
+  margin: 0 auto;
+  max-width: 9ch;
+  font-size: clamp(46px, 8vw, 112px);
+  font-weight: 800;
+  line-height: 0.93;
+  letter-spacing: -0.05em;
+}
+
+.colophon__grid--loc {
+  align-items: start;
+}
+
+@media (min-width: 46rem) {
+  .colophon__grid--loc {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+@media (max-width: 1023px) {
+  .loc-hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .loc-screen {
+    transform: none;
+  }
+  [dir="rtl"] .loc-screen {
+    transform: none;
+  }
+  .k-read,
+  .k-search {
+    --s: 3;
+  }
+  .k-library {
+    --s: 6;
+  }
+}
+
+@media (max-width: 719px) {
+  .k-when {
+    display: flex;
+  }
+  .k-when p {
+    margin-top: 14px;
+    font-size: 17px;
+  }
+  .loc-hero h1 {
+    font-size: clamp(36px, 10vw, 48px);
+  }
+}
+
 /* -------------------------------------------------------------------------
    10. Motion off
    ------------------------------------------------------------------------- */
@@ -2281,9 +2815,11 @@ main.section {
   .rows button,
   .bigmark,
   .plinks a,
-  .pile .in {
+  .pile .in,
+  .lang__card {
     transition: none !important;
   }
+  a.lang__card:hover,
   .tile:hover,
   .js .tile.rv.in:hover,
   .plan:hover,
