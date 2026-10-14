@@ -10,7 +10,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="476c65ddec3f">
+<meta name="laytr-build" content="efe932eb4bf9">
 
 
 <meta property="og:type" content="website">
@@ -28,7 +28,7 @@
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/app-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/laytr.css?v=476c65ddec3f">
+<link rel="stylesheet" href="/assets/css/laytr.css?v=efe932eb4bf9">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -77,8 +77,9 @@
   </p>
 
   <p class="catalog" style="margin-top:var(--s-l)">
-    In effect 23 September 2026
-    <span class="catalog__sep">·</span>Applies to Laytr for iPhone and iPad, version 1.0.7, and Laytr for Mac, version 1.0
+    In effect 14 October 2026
+    <span class="catalog__sep">·</span>Applies to Laytr for iPhone and iPad, version 1.0.15, and Laytr for Mac, version 1.1.1
+    <span class="catalog__sep">·</span>And to <a href="#android">Laytr for Android</a>, version 1.0.15
     <span class="catalog__sep">·</span>And to this website
   </p>
 
@@ -87,12 +88,12 @@
     <div class="note">
       <p class="catalog catalog--strong">The short version</p>
       <ul>
-        <li>Your saved content never reaches us. The only copy that leaves your phone is Laytr&rsquo;s backup in <strong>your own iCloud</strong>, which is described below and can be switched off.</li>
+        <li>Your saved content never reaches us. On iPhone, iPad and Mac the only copies that leave your device are Laytr&rsquo;s sync between your own devices and its backup, both in <strong>your own iCloud</strong>, described below, and both can be switched off.</li>
         <li>There is no account, no sign-in, and no profile of you.</li>
-        <li>Laytr shows no advertising and does no tracking of any kind. It never asks for App Tracking Transparency permission, because it has nothing to track you with.</li>
+        <li>We show no ads and we do not sell your data. Laytr never uses the advertising identifier and never asks for App Tracking Transparency permission. On iPhone and iPad we do measure which of our own links and campaigns lead to an install or a purchase; that is described under &ldquo;Measuring our own campaigns&rdquo; below and follows the usage switch.</li>
         <li>Two diagnostics switches exist in the app. Both are <strong>on by default and can be turned off at any time</strong> in Now &rarr; Settings &rarr; Privacy, and neither can ever carry your content.</li>
         
-        <li>Payment is Apple&rsquo;s. The purchase step itself is run for us by <strong>RevenueCat</strong>, a processor that sees the purchase &mdash; a random identifier and what was bought &mdash; and never what you saved. There is no switch for it, because it is what performs the purchase.</li>
+        <li>Payment is Apple&rsquo;s. The purchase step itself is run for us by <strong>RevenueCat</strong>, a processor that sees the purchase &mdash; a random identifier, the device id Apple gives to our apps, and what was bought &mdash; and never what you saved. There is no switch for it, because it is what performs the purchase.</li>
         
         <li>This website sets no cookies, runs no analytics, and embeds nothing from anyone else.</li>
       </ul>
@@ -149,7 +150,7 @@
     
 
     <h2>Network requests Laytr makes</h2>
-    <p>Laytr contacts the internet in exactly three situations:</p>
+    <p>Laytr contacts the internet in exactly four situations:</p>
     <ol>
       <li>
         <strong>To fetch a page you saved.</strong> When you save a link, Laytr
@@ -158,6 +159,16 @@
         pictures to store offline. That request goes to the site you saved, and
         nowhere else. Those sites see a request the same way any browser visit
         would, and their own privacy policies apply to it.
+      </li>
+      <li>
+        <strong>To keep your devices in step, through your own iCloud.</strong>
+        On iPhone, iPad and Mac, Laytr syncs your saves between the devices
+        signed in to your Apple Account through Apple&rsquo;s iCloud, in your
+        own private iCloud database, which we cannot read, and writes the backup
+        described above to your own iCloud. Sync is on by default and switched off under
+        <strong>Settings &rarr; Storage</strong> (on the Mac, Settings &rarr;
+        Sync); both stop when iCloud is off for Laytr. Laytr for Android has no
+        sync.
       </li>
       <li>
         <strong>To complete a purchase.</strong> Purchases go through
@@ -171,8 +182,9 @@
         
       </li>
       <li>
-        <strong>Diagnostics, unless you switch them off.</strong> Described
-        in the next section.
+        <strong>Diagnostics and campaign measurement, unless you switch them
+        off.</strong> Described in the next section and under
+        &ldquo;Measuring our own campaigns&rdquo;.
       </li>
     </ol>
     <p>
@@ -232,10 +244,10 @@
       ad, and nothing about you. Whether an ad was involved, and from
       version&nbsp;1.0.10 which of our campaigns, ad groups and keywords it
       was, is counted alongside the events above. This is not the
-      advertising identifier (IDFA): Laytr never reads it, and never shows
-      the App&nbsp;Tracking&nbsp;Transparency prompt, because there is
-      nothing to track you with. With usage sharing off, the token is not
-      read and nothing is sent.
+      advertising identifier (IDFA): Laytr never shows the
+      App&nbsp;Tracking&nbsp;Transparency prompt, so iOS never gives that
+      identifier to the app. With usage sharing
+      off, the token is not read and nothing is sent.
     </p>
     
 
@@ -252,7 +264,7 @@
       <li>Reminder times or notification text</li>
       <li>Filenames, or anything you exported</li>
       <li>Your location, contacts, photos library, calendar, health or camera</li>
-      <li>Advertising identifiers, device fingerprints, or any cross-app identifier</li>
+      <li>The advertising identifier (IDFA), or any identifier that other companies&rsquo; apps can read</li>
     </ul>
     <p>
       This is enforced in Laytr&rsquo;s own automated tests, which fail the build
@@ -262,19 +274,55 @@
 
     <h2>Advertising and tracking</h2>
     <p>
-      There is none. Laytr contains no advertising SDK, sells nothing to data
-      brokers, and does not track you across apps or websites. Because nothing is
-      used for tracking, Laytr never presents the App Tracking Transparency
-      prompt.
+      We show no ads and we sell nothing to data brokers. Laytr never uses
+      the advertising identifier (IDFA) and never presents the App Tracking
+      Transparency prompt. We do measure which of our own links and
+      campaigns bring people to Laytr; the next section says how.
+    </p>
+
+    <h2>Measuring our own campaigns</h2>
+    <p>
+      From version&nbsp;1.0.15, Laytr for iPhone and iPad uses
+      <strong>Singular</strong> (Singular Labs, Inc.), a measurement service,
+      so we can see which of our own links and campaigns lead to an install
+      or a purchase. It is a sales tool for us. It shows you nothing and changes
+      nothing in the app.
+    </p>
+    <p>
+      While <strong>Share anonymous usage</strong> is on, Singular receives
+      a device id Apple gives to our apps on your device (not the
+      advertising id), your IP address, and basic device details such as the
+      model and iOS version. If you tap one of our links, in a video
+      description, an article or on our site, and later open Laytr, Singular
+      uses the IP address and those device details to match the tap to the
+      install. That is how we learn which link worked. It also
+      reads the Apple ad token described under &ldquo;Optional
+      diagnostics&rdquo;, so Apple can tell it which of our ads was involved.
+      
+      RevenueCat also tells Singular when a purchase happened, matched by an
+      identifier Singular makes up for the installation.
+      
+      Singular gets no name, no e-mail, no account and nothing you saved.
+    </p>
+    <p>
+      Switch <strong>Share anonymous usage</strong> off and it stops. The
+      app stops Singular and removes Singular&rsquo;s identifier from
+      RevenueCat, so purchases stop reaching it too. Laytr for Mac does not
+      include it.
+      Singular&rsquo;s own policy is at
+      <a href="https://www.singular.net/privacy-policy/" rel="noopener">singular.net/privacy-policy</a>.
     </p>
 
     <h2>Permissions Laytr asks for</h2>
     <dl>
       <dt>Notifications</dt>
       <dd>
-        Asked for only after you schedule something that needs one, and explained
-        first. Declining never breaks anything &mdash; the item still returns to
-        the top of Now at the time you chose.
+        On iPhone and iPad, asked for once and explained first: on the
+        &ldquo;Turn on reminders&rdquo; step of the first-run tour, or, if you
+        said not now there, the first time you give a save a return time. Laytr
+        for Mac schedules no notifications and does not ask. Declining never
+        breaks anything &mdash; the item still returns to the top of Now at the
+        time you chose.
       </dd>
       <dt>Photos and Files</dt>
       <dd>
@@ -300,7 +348,8 @@
       software makes up for your installation &mdash; not your name, not your
       Apple Account, not an advertising identifier &mdash; together with the
       <strong>purchase history</strong> attached to it: which plan, when, and
-      whether a subscription is still active. It never receives your name,
+      whether a subscription is still active. Its software also sends the
+      device id Apple gives to our apps with its requests. It never receives your name,
       card, billing address or Apple Account, and it never receives anything
       you saved. It does not use any of this for tracking or advertising, and
       it is not linked to you as a person. What the app unlocks is still
@@ -413,6 +462,258 @@
       reading may have been delivered from a server near you.
     </p>
 
+    
+    <h2 id="android">Laytr for Android</h2>
+    <p class="catalog">
+      In effect 14 October 2026
+      <span class="catalog__sep">·</span>Laytr for Android, version 1.0.15
+    </p>
+    <p>
+      This section describes Laytr for Android and stands on its own. Where the
+      rest of this page describes other devices, it does not apply to the
+      Android app. Who is responsible, how to reach us, and what this website
+      does are the same as above.
+    </p>
+
+    <div class="note">
+      <p class="catalog catalog--strong">The short version, on Android</p>
+      <ul>
+        <li>What you save stays on your phone. There is no account, no sign-in, no Laytr server and no profile of you.</li>
+        <li>Laytr shows no advertising, does not use the Android advertising identifier, and does no tracking.</li>
+        <li>Two diagnostics switches exist in the app. Both are <strong>on by default and can be turned off at any time</strong> in Settings &rarr; Privacy, and neither can ever carry what you saved.</li>
+        <li>Payment is Google Play&rsquo;s. Laytr never sees your card or your Google account.</li>
+      </ul>
+    </div>
+
+    <h3>What Laytr stores on Android, and where</h3>
+    <p>
+      Everything you save &mdash; links, articles, files, images, screenshots,
+      your notes, tags, cases, return times and search history &mdash; is stored
+      in Laytr&rsquo;s own storage on your phone. None of it is sent to us.
+      Android&rsquo;s own backup and device-transfer features are switched off
+      for Laytr, so Android does not copy it to a cloud either. To move your
+      library to another phone, export it from Laytr as a ZIP and import it
+      there.
+    </p>
+    <p>
+      Text that Laytr reads out of your screenshots is produced <strong>on your
+      phone</strong>, by text-recognition models that are bundled inside the app.
+      The images are not sent anywhere for processing, and neither is the text.
+      Google's text-recognition library inside Laytr does not send usage
+      reports; we removed that. It does tell Google Play services on your phone
+      that a recognition ran and how long it took, without your text, your
+      picture or any Laytr id, and Google Play services handles that under
+      Google's terms.
+    </p>
+
+    <h3>Network requests Laytr makes on Android</h3>
+    <ol>
+      <li>
+        <strong>To fetch a page you saved.</strong> When you save a link, Laytr
+        requests that page from its own website to get the title, a preview
+        image and, where the page allows it, the article text and pictures to
+        store on your phone. For links to YouTube and Vimeo it also asks that
+        service for the video&rsquo;s title and picture. The request goes to the
+        site you saved and nowhere else. It carries no cookies and no account:
+        only a fixed name for the app. Those sites see a request the same way
+        any browser visit would, and their own privacy policies apply to it.
+      </li>
+      <li>
+        <strong>To complete a purchase.</strong> Purchases go through Google
+        Play. Laytr never sees or handles your payment details. See Purchases,
+        below.
+      </li>
+      <li>
+        <strong>Diagnostics and install source, unless you switch them
+        off.</strong> Described next.
+      </li>
+    </ol>
+
+    <h3>Optional diagnostics, on Android</h3>
+    <p>
+      Laytr has two switches under <strong>Settings &rarr; Privacy</strong>.
+      Both are <strong>on by default</strong>, they work independently, and you
+      can turn either one off at any time. Off means stopped at once and
+      anything waiting to be sent is thrown away &mdash; and turning a switch
+      back on never delivers anything that happened while it was off.
+    </p>
+    <p>
+      A version of Laytr sends these reports only if it was built connected
+      to the two services named below. The first build released to testers on
+      Google Play (version 1.0.15, build 1001501) is connected to neither, so
+      it sends them nothing, whichever way the switches are set. What follows
+      describes what a connected version sends.
+    </p>
+    <dl>
+      <dt>Share anonymous usage</dt>
+      <dd>
+        Sends a fixed list of typed events &mdash; things like &ldquo;a save was
+        added&rdquo;, &ldquo;a search returned results in the 1&ndash;10
+        band&rdquo;, &ldquo;the paywall was shown&rdquo;. Values are categories
+        and buckets, never text you typed. Each event goes with the app version,
+        the Android version, your phone&rsquo;s maker and model, your language,
+        and the random identifier described below. Processed by PostHog on our
+        behalf.
+      </dd>
+      <dt>Share crash reports</dt>
+      <dd>
+        Sends the technical details of a crash or a freeze: the stack trace,
+        the type of error, the app version and a few technical labels. The
+        error's own message is never sent. Every report passes through a
+        filter that removes links, host names, file paths, e-mail addresses
+        and long codes before it is sent. It never
+        includes a screenshot or what was on screen, and not the phone model.
+        Processed by Sentry on our behalf.
+      </dd>
+    </dl>
+    <p>
+      While usage sharing is on, a <strong>random identifier</strong> is created
+      so two events can be recognised as coming from the same installation. It
+      is generated from nothing &mdash; not your phone&rsquo;s Android ID, not
+      an advertising identifier, not an account &mdash; and it is
+      <strong>deleted the moment you switch the toggle off</strong>, so turning
+      it back on starts a new, unlinked one. Reinstalling the app also produces a
+      new one. As with any request to any server, the services that receive
+      these reports can see the IP address they came from.
+    </p>
+    <p>
+      Also while usage sharing is on, once per installation, Laytr asks Google
+      Play which link or campaign brought you to Laytr. Play records this when
+      you install from a link. Laytr keeps three short fields from it &mdash;
+      source, medium and campaign name &mdash; and drops everything else,
+      including any click identifier. They are counted alongside the events
+      above. This is not the advertising identifier: Laytr for Android neither
+      requests nor reads it. With usage sharing off, Play is not asked, and
+      anything kept from it is deleted.
+    </p>
+    <p>
+      Laytr also asks once, during the first-run tour, where you heard about it.
+      You can pick an answer from a fixed list or skip. An answer is counted
+      only while usage sharing is on, and it is never typed text.
+    </p>
+
+    <h3>What is never collected, on Android</h3>
+    <p>None of the following is ever sent off your phone by Laytr, on any setting:</p>
+    <ul>
+      <li>The addresses, titles or text of anything you saved</li>
+      <li>Your notes, tags, case names or favourites</li>
+      <li>Article text, screenshots, images, files, or text read out of them</li>
+      <li>Anything you typed into search</li>
+      <li>Reminder times or notification text</li>
+      <li>File names, or anything you exported</li>
+      <li>Your location, contacts, photos, calendar, health data, camera or microphone</li>
+      <li>Your Android ID, the advertising identifier, or any device fingerprint</li>
+    </ul>
+
+    <h3>Advertising and tracking, on Android</h3>
+    <p>
+      There is none. Laytr for Android contains no advertising code, sells
+      nothing to data brokers, does not track you across apps or websites, and
+      does not use the Android advertising identifier or ask for the permission
+      to read it.
+    </p>
+
+    <h3>Permissions Laytr asks for on Android</h3>
+    <dl>
+      <dt>Notifications</dt>
+      <dd>
+        Asked for once, and explained first &mdash; on the reminders step of the
+        first-run tour, or the first time you give a save a return time if you
+        skipped the tour. Declining never breaks anything: the save still
+        returns to the top of Now at the time you chose.
+      </dd>
+      <dt>Alarms and reminders</dt>
+      <dd>
+        Android lets you allow exact reminder times in its own settings. If you
+        do, a reminder arrives at the minute you chose. If you do not, it
+        arrives within about ten minutes after that minute.
+      </dd>
+      <dt>Running when the phone starts</dt>
+      <dd>
+        Only to put your reminders back after a restart, an update, or a change
+        of clock or time zone.
+      </dd>
+      <dt>An ongoing notification while exporting or importing</dt>
+      <dd>
+        Laytr shows one for as long as the work lasts, so that Android keeps it
+        going if you leave the app. It goes away when the file is done.
+      </dd>
+      <dt>Files and photos</dt>
+      <dd>
+        Reached only through Android&rsquo;s share sheet and file picker, when
+        you choose to save something. Laytr never browses your photos or your
+        files.
+      </dd>
+      <dt>Internet</dt>
+      <dd>
+        For the requests listed above, and to wait for a connection before
+        making them.
+      </dd>
+    </dl>
+    <p>Laytr for Android requests no location, contacts, camera, microphone, phone, SMS or health access.</p>
+
+    <h3>Purchases, on Android</h3>
+    <p>
+      Payment is handled entirely by Google Play. Laytr asks Google Play which
+      purchases you have, checks Google&rsquo;s signature on that answer on your
+      phone, and keeps what is unlocked on your phone. It never receives your
+      name, card, billing address or Google account. There is no Laytr server and
+      no other purchase service in the path. Refunds, renewals and cancellations
+      are managed in Google Play, under Payments &amp; subscriptions, not by us.
+      While usage sharing is on, Laytr counts which plan card you chose
+      (monthly, annual or lifetime) and whether the purchase completed, was
+      cancelled or failed &mdash; never a price, an order number or a payment
+      detail.
+    </p>
+    <p>
+      Laytr may ask Google Play to show its own rating sheet. Google decides
+      whether to show it, and Laytr is never told what you answered.
+    </p>
+
+    <h3>Retention and your rights, on Android</h3>
+    <p>
+      Your saved content is kept on your phone until you delete it. Deleted
+      saves go to Recently Deleted and are recoverable for 30 days before being
+      removed permanently, files included. Uninstalling Laytr removes all of it.
+      Optional diagnostics data is retained by our processors for no longer than
+      12 months, and is deleted sooner on request.
+    </p>
+    <ul>
+      <li>
+        <strong>Access and portability are built in.</strong> Settings &rarr;
+        Export writes your whole library as one ZIP of readable Markdown, HTML
+        and your original files, free, at any time, on any plan or none.
+      </li>
+      <li>
+        <strong>Deletion is in your hands.</strong> Delete a save, or delete the
+        app, and it is gone. There is no copy with us to ask us to delete.
+      </li>
+      <li>
+        <strong>For diagnostics data</strong>, switching &ldquo;Share anonymous
+        usage&rdquo; off deletes the random identifier immediately and severs
+        the link between past and future events. To ask us to delete diagnostics
+        we have already received, write to
+        <a href="mailto:support@laytr.app">support@laytr.app</a>.
+        Because the identifier is random and Laytr does not show it, we may not
+        be able to find yours, and we will tell you so if that is the case.
+      </li>
+    </ul>
+
+    <h3>Children, on Android</h3>
+    <p>
+      Laytr for Android is for people aged 13 and over. It is not directed at
+      children, and it has no accounts, no social features, no messaging, and no
+      user-generated content from anyone but you.
+    </p>
+
+    <h3>If this section changes</h3>
+    <p>
+      If this section changes in a way that affects what leaves your phone, the
+      change ships with an app release, and the Data safety section of
+      Laytr&rsquo;s Google Play listing is updated at the same time. The date at
+      the top of this section always reflects the current version.
+    </p>
+
     <h2>Changes to this policy</h2>
     <p>
       If this policy changes in a way that affects what leaves your device, the
@@ -482,7 +783,7 @@
     </div>
   </div>
 </footer>
-<script src="/assets/js/ledger.js?v=476c65ddec3f" defer></script>
+<script src="/assets/js/ledger.js?v=efe932eb4bf9" defer></script>
 
 </body>
 </html>
