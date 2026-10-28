@@ -10,7 +10,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="efe932eb4bf9">
+<meta name="laytr-build" content="53173b57c263">
 
 
 <meta property="og:type" content="website">
@@ -28,7 +28,7 @@
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/app-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/laytr.css?v=efe932eb4bf9">
+<link rel="stylesheet" href="/assets/css/laytr.css?v=53173b57c263">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -77,8 +77,8 @@
   </p>
 
   <p class="catalog" style="margin-top:var(--s-l)">
-    In effect 14 October 2026
-    <span class="catalog__sep">·</span>Applies to Laytr for iPhone and iPad, version 1.0.15, and Laytr for Mac, version 1.1.1
+    In effect 28 October 2026
+    <span class="catalog__sep">·</span>Applies to Laytr for iPhone and iPad, version 1.0.16, and Laytr for Mac, version 1.1.1
     <span class="catalog__sep">·</span>And to <a href="#android">Laytr for Android</a>, version 1.0.15
     <span class="catalog__sep">·</span>And to this website
   </p>
@@ -198,14 +198,24 @@
     <p>
       Laytr has two switches under <strong>Now &rarr; Settings &rarr;
       Privacy</strong>. Both are <strong>on by default</strong>, and you can
-      turn either one off at any time. Off means dropped, not queued for
-      later &mdash; and turning a switch back on never delivers anything
-      that happened while it was off.
+      turn either one off at any time. Nothing that happens while a switch is
+      off is recorded, and turning it back on never delivers anything from
+      that time.
     </p>
     <p>
       Turning off <strong>Share anonymous usage</strong> also deletes the
       random identifier it was using, so the link between what was sent
       before and anything sent later is broken rather than merely paused.
+    </p>
+    <p>
+      In Laytr for iPhone and iPad from version&nbsp;1.0.16, with
+      <strong>Share anonymous usage</strong> off, Laytr makes no contact with our analytics service, PostHog, at
+      all, and turning the switch off deletes any events that were stored
+      and not yet sent. We measured this on a test build in the iOS
+      simulator. Versions up to 1.0.15 did not do this, and this page was
+      wrong about them: events recorded before the switch went off could
+      still be sent afterwards, and the app still asked PostHog for one
+      small settings file each time it opened. Updating the app ends that.
     </p>
     <dl>
       <dt>Share anonymous usage</dt>
@@ -247,7 +257,7 @@
       advertising identifier (IDFA): Laytr never shows the
       App&nbsp;Tracking&nbsp;Transparency prompt, so iOS never gives that
       identifier to the app. With usage sharing
-      off, the token is not read and nothing is sent.
+      off, the token is not read and this exchange with Apple does not happen.
     </p>
     
 
@@ -465,7 +475,7 @@
     
     <h2 id="android">Laytr for Android</h2>
     <p class="catalog">
-      In effect 14 October 2026
+      In effect 28 October 2026
       <span class="catalog__sep">·</span>Laytr for Android, version 1.0.15
     </p>
     <p>
@@ -538,11 +548,11 @@
       back on never delivers anything that happened while it was off.
     </p>
     <p>
-      A version of Laytr sends these reports only if it was built connected
-      to the two services named below. The first build released to testers on
-      Google Play (version 1.0.15, build 1001501) is connected to neither, so
-      it sends them nothing, whichever way the switches are set. What follows
-      describes what a connected version sends.
+      The first builds released to testers on Google Play (version 1.0.15,
+      builds 1001501 to 1001504) were connected to neither of the two services
+      named below, so they sent them nothing, whichever way the switches were
+      set. From build 1001505 on, Laytr for Android is connected to both, and
+      sends what follows while the matching switch is on.
     </p>
     <dl>
       <dt>Share anonymous usage</dt>
@@ -560,8 +570,8 @@
         Sends the technical details of a crash or a freeze: the stack trace,
         the type of error, the app version and a few technical labels. The
         error's own message is never sent. Every report passes through a
-        filter that removes links, host names, file paths, e-mail addresses
-        and long codes before it is sent. It never
+        filter that removes links, file paths, file names and e-mail
+        addresses before it is sent. It never
         includes a screenshot or what was on screen, and not the phone model.
         Processed by Sentry on our behalf.
       </dd>
@@ -643,6 +653,12 @@
         Reached only through Android&rsquo;s share sheet and file picker, when
         you choose to save something. Laytr never browses your photos or your
         files.
+      </dd>
+      <dt>Google Play purchases and install source</dt>
+      <dd>
+        Two permissions that let Laytr talk to the Google Play app on your
+        phone: one to buy and check purchases, and one to ask which link
+        brought you to Laytr, as described above. Neither shows a prompt.
       </dd>
       <dt>Internet</dt>
       <dd>
@@ -783,7 +799,7 @@
     </div>
   </div>
 </footer>
-<script src="/assets/js/ledger.js?v=efe932eb4bf9" defer></script>
+<script src="/assets/js/ledger.js?v=53173b57c263" defer></script>
 
 </body>
 </html>
