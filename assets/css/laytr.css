@@ -835,6 +835,21 @@ main.section {
   color: var(--mark);
 }
 
+/* The App Store and Google Play actions side by side: two .store siblings,
+   same treatment, wrapping onto two lines on a narrow screen. The gap
+   clears each button's offset plate. */
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 22px;
+}
+
+.hero .stores,
+.finalpanel .stores {
+  justify-content: center;
+}
+
 .onlime .store {
   box-shadow: 5px 6px 0 var(--paper);
 }
@@ -1835,7 +1850,7 @@ main.section {
 
 .since-list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -1896,6 +1911,9 @@ main.section {
   }
   .since-list {
     grid-template-columns: 1fr 1fr;
+  }
+  .since-list li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
   .everywhere.row {
     grid-template-columns: 1fr;
@@ -2231,7 +2249,7 @@ main.section {
   font-size: 19px;
 }
 
-.finalpanel .store {
+.finalpanel .stores {
   margin-top: 34px;
 }
 

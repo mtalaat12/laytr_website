@@ -17,7 +17,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="53173b57c263">
+<meta name="laytr-build" content="9bdda0fbf39e">
 
 
 <meta property="og:type" content="website">
@@ -35,7 +35,7 @@
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/app-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/laytr.css?v=53173b57c263">
+<link rel="stylesheet" href="/assets/css/laytr.css?v=9bdda0fbf39e">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -51,6 +51,7 @@
     <nav class="nav" aria-label="Laytr">
       <ul>
         <li><a class="nav__cta" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8" aria-label="Laytr, App Store">App Store</a></li>
+        <li><a class="nav__cta" href="https://play.google.com/store/apps/details?id=com.laytr.app" aria-label="Laytr, Google Play">Google Play</a></li>
       </ul>
     </nav>
   </div>
@@ -74,6 +75,10 @@
        subscription small print is left to the App Store page, beside the
        price the reader will actually be charged.
      - The tagline stays in English (owner decision).
+     - One exception to "no copy here": loc.site.android_note, a short line
+       per language about Laytr for Android (tools/prepare_languages.py,
+       ANDROID_NOTES). Written for the site, NOT natively reviewed. "Google
+       Play" and "App Store" are names and stay untranslated.
      - These pages make cross-device claims (the listings' sync sections), so
        each is named in website/RELEASE_GATE.md. -->
 
@@ -90,10 +95,16 @@
         <h1>Des favoris qui reviennent</h1>
         <p class="lede">Enregistre n’importe quoi depuis n’importe quelle app, choisis quand tu veux le retrouver, et Laytr le remet en haut de l’app ce jour-là. Liens, recettes, vidéos, captures d’écran et PDF, au même endroit, sur iPhone, iPad et Mac.</p>
         <div class="cta">
-          
-          <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8" aria-label="Laytr, App Store"><svg aria-hidden="true"><use href="#m"/></svg>App&nbsp;Store</a>
-          
+          <div class="stores">
+            
+            <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8" aria-label="Laytr, App Store"><svg aria-hidden="true"><use href="#m"/></svg>App&nbsp;Store</a>
+            
+            
+            <a class="store" href="https://play.google.com/store/apps/details?id=com.laytr.app" aria-label="Laytr, Google Play"><svg aria-hidden="true"><use href="#m"/></svg>Google&nbsp;Play</a>
+            
+          </div>
           <p class="cta-note">Laytr parle maintenant français sur iPhone et iPad. (L’app Mac est en anglais.)</p>
+          <p class="cta-note">Laytr pour Android parle aussi français. Il ne se synchronise pas avec l’iPhone, l’iPad et le Mac.</p>
         </div>
       </div>
 
@@ -178,9 +189,14 @@
       <div class="finalpanel onlime">
         <svg class="bigmark" aria-hidden="true"><use href="#m"/></svg>
         <p class="loc-tagline" lang="en" dir="ltr">Save now. Come back Laytr.</p>
-        
-        <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8" aria-label="Laytr, App Store"><svg aria-hidden="true"><use href="#m"/></svg>App&nbsp;Store</a>
-        
+        <div class="stores">
+          
+          <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8" aria-label="Laytr, App Store"><svg aria-hidden="true"><use href="#m"/></svg>App&nbsp;Store</a>
+          
+          
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.laytr.app" aria-label="Laytr, Google Play"><svg aria-hidden="true"><use href="#m"/></svg>Google&nbsp;Play</a>
+          
+        </div>
       </div>
     </div>
   </section>
@@ -224,6 +240,7 @@
 
       <p class="footnote muted" dir="ltr">&copy; 2026 Waitery Inc.</p>
       <p class="footnote muted" lang="en" dir="ltr">Apple, iPhone, iPad, Mac, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries. Laytr is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
+      <p class="footnote muted" lang="en" dir="ltr">Android and Google Play are trademarks of Google LLC.</p>
     </div>
   </div>
 </footer>

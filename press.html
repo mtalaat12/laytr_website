@@ -10,7 +10,7 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="53173b57c263">
+<meta name="laytr-build" content="9bdda0fbf39e">
 
 
 <meta property="og:type" content="website">
@@ -28,7 +28,7 @@
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/app-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/laytr.css?v=53173b57c263">
+<link rel="stylesheet" href="/assets/css/laytr.css?v=9bdda0fbf39e">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -49,7 +49,7 @@
         <li class="nav__item"><a class="nav__link" href="/#pricing">Pricing</a></li>
         <li class="nav__item"><a class="nav__link" href="/support">Support</a></li>
             <li class="nav__item"><a class="nav__link" href="/privacy">Privacy</a></li>
-        <li><a class="nav__cta" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get the app</a></li>
+        <li><a class="nav__cta" href="/#get">Get the app</a></li>
       </ul>
     </nav>
   </div>
@@ -78,13 +78,16 @@
   <p class="lede measure" style="margin-top:var(--s-xl)">
     Laytr is a private archive for everything you mean to come back to. Save it
     from any app, tell Laytr when to bring it back, and it returns that day.
-    iPhone, iPad and Mac.
+    iPhone, iPad, Mac and Android.
   </p>
 
   <div class="btn-row" style="margin-top:var(--s-xl)">
     <a class="btn btn--mark" href="/assets/press/laytr-press-kit.zip" download>Download the press kit</a>
     
     <a class="btn btn--outline" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">View on the App&nbsp;Store</a>
+    
+    
+    <a class="btn btn--outline" href="https://play.google.com/store/apps/details?id=com.laytr.app">View on Google&nbsp;Play</a>
     
   </div>
 
@@ -146,7 +149,8 @@
           standard components. StoreKit&nbsp;2 with transaction verification, which
           alone decides what a reader owns. The purchase step itself is run by
           RevenueCat, which sees a random identifier and what was bought, and
-          never anything saved.
+          never anything saved. On Android, the same Swift engine runs under
+          Jetpack Compose screens, and Google Play Billing takes payment.
         </p>
       </div>
     </div>
@@ -219,10 +223,10 @@
       <dd>Waitery Inc</dd>
 
       <dt>Platform</dt>
-      <dd>iPhone and iPad, iOS&nbsp;17 or later. Mac, macOS&nbsp;14 or later. No watch app, no widgets.</dd>
+      <dd>iPhone and iPad, iOS&nbsp;17 or later. Mac, macOS&nbsp;14 or later. Android phones and tablets, Android&nbsp;9 or later, on Google&nbsp;Play. No watch app.</dd>
 
       <dt>Languages</dt>
-      <dd>From version 1.0.13, the iPhone and iPad app is in seven languages: English, German, French, Spanish, Arabic, Italian and Portuguese (Brazil). The Mac app is in English.</dd>
+      <dd>The iPhone and iPad app (from version 1.0.13) and the Android app are in seven languages: English, German, French, Spanish, Arabic, Italian and Portuguese (Brazil). The Mac app is in English.</dd>
 
       <dt>Price</dt>
       <dd>
@@ -230,7 +234,8 @@
         and that is the only difference between them:
         $1.99 per month,
         $14.99 per year, or
-        $39.99 once.
+        $39.99 once, the same
+        on the App&nbsp;Store and Google&nbsp;Play.
         
         <strong>Lifetime is $24.99 right now</strong>
         &mdash; a launch offer against the standard
@@ -413,10 +418,10 @@
 
     <div class="mount">
       <ul class="stack--tight stack">
-        <li class="body"><strong>Sync is through the reader&rsquo;s own iCloud, not ours.</strong> Saves move between iPhone, iPad and Mac, on by default and free on every plan, with one switch in Settings to turn it off. On the Mac it needs Laytr for Mac&nbsp;1.1 or later.</li>
+        <li class="body"><strong>Sync is through the reader&rsquo;s own iCloud, not ours.</strong> Saves move between iPhone, iPad and Mac, on by default and free on every plan, with one switch in Settings to turn it off. On the Mac it needs Laytr for Mac&nbsp;1.1 or later. Laytr for Android does not sync: a library moves to or from it as an exported Laytr archive.</li>
         <li class="body"><strong>No AI.</strong> No summarising, no automatic tagging, no suggestions.</li>
         <li class="body"><strong>No feed</strong>, no discovery, no recommendations, no social features.</li>
-        <li class="body">No watch app, no widgets, no web version.</li>
+        <li class="body">No watch app, no web version.</li>
         <li class="body">It never runs JavaScript to save a page, so pages that build themselves in the browser produce no offline copy &mdash; and the card says so rather than pretending.</li>
         <li class="body">It never logs in, never gets past a paywall or a meter, and never downloads or re-hosts video from social platforms.</li>
       </ul>
@@ -482,8 +487,11 @@
   <rect x="471.99" y="25.00" width="13.20" height="66.00" rx="6.60" transform="rotate(120.0 478.59 58.00)" fill="var(--laytr-mark)"/>
 </svg></span>
         <p class="headline">Save now. Come back Laytr.</p>
-        <p class="footnote muted measure">For iPhone, iPad and Mac. Made by a small independent team, with no Laytr account and no Laytr server.</p>
-        <p><a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a></p>
+        <p class="footnote muted measure">For iPhone, iPad, Mac and Android. Made by a small independent team, with no Laytr account and no Laytr server.</p>
+        <div class="btn-row">
+          <a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a>
+          <a class="btn btn--mark" href="https://play.google.com/store/apps/details?id=com.laytr.app">Get Laytr on Google&nbsp;Play</a>
+        </div>
       </div>
 
       <div>
@@ -521,10 +529,11 @@
 
       <p class="footnote muted">&copy; 2026 Waitery Inc.</p>
       <p class="footnote muted">Apple, iPhone, iPad, Mac, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries. Laytr is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
+      <p class="footnote muted">Android and Google Play are trademarks of Google LLC.</p>
     </div>
   </div>
 </footer>
-<script src="/assets/js/ledger.js?v=53173b57c263" defer></script>
+<script src="/assets/js/ledger.js?v=9bdda0fbf39e" defer></script>
 
 </body>
 </html>

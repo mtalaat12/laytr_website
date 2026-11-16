@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Laytr — Save anything. Laytr reminds you when.</title>
-<meta name="description" content="Links, recipes, videos, screenshots and PDFs from any app, in one place on your iPhone, iPad and Mac. Pick a day and Laytr reminds you. No account, no ads.">
+<meta name="description" content="Links, recipes, videos, screenshots and PDFs from any app, in one place on your iPhone, iPad, Mac or Android device. Pick a day and Laytr reminds you. No account, no ads.">
 <link rel="canonical" href="https://laytr.app">
 <link rel="alternate" hreflang="en" href="https://laytr.app/">
 <link rel="alternate" hreflang="de" href="https://laytr.app/de/">
@@ -17,13 +17,13 @@
 <!-- The fingerprint of the sources this page was built from. It is how a deploy
      is proven rather than assumed: website/tools/verify.py computes the same
      value locally and compares it against what laytr.app is actually serving. -->
-<meta name="laytr-build" content="53173b57c263">
+<meta name="laytr-build" content="9bdda0fbf39e">
 
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Laytr">
 <meta property="og:title" content="Laytr — Save anything. Laytr reminds you when.">
-<meta property="og:description" content="Links, recipes, videos, screenshots and PDFs from any app, in one place on your iPhone, iPad and Mac. Pick a day and Laytr reminds you. No account, no ads.">
+<meta property="og:description" content="Links, recipes, videos, screenshots and PDFs from any app, in one place on your iPhone, iPad, Mac or Android device. Pick a day and Laytr reminds you. No account, no ads.">
 <meta property="og:url" content="https://laytr.app">
 <meta property="og:image" content="https://laytr.app/assets/brand/app-icon-512.png">
 <meta name="twitter:card" content="summary">
@@ -35,7 +35,7 @@
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/brand/app-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/laytr.css?v=53173b57c263">
+<link rel="stylesheet" href="/assets/css/laytr.css?v=9bdda0fbf39e">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -56,7 +56,7 @@
         <li class="nav__item"><a class="nav__link" href="/#pricing">Pricing</a></li>
         <li class="nav__item"><a class="nav__link" href="/support">Support</a></li>
             <li class="nav__item"><a class="nav__link" href="/privacy">Privacy</a></li>
-        <li><a class="nav__cta" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get the app</a></li>
+        <li><a class="nav__cta" href="/#get">Get the app</a></li>
       </ul>
     </nav>
   </div>
@@ -72,11 +72,15 @@
        things everywhere and find them nowhere), then the answer.
      - Story order (owner, 2026-09-14): one place from any app, no account
        and no server of ours, pick a day and Laytr reminds you, cases, one
-       app on iPhone, iPad and Mac.
+       app on iPhone, iPad and Mac, and now Android.
      - "Laytr reminds you". Never "sends it back", "comes back" or "shows
        up". Never airplane mode or offline. The company speaks as "we".
-     - No hand-built App Store badge (Apple forbids recreating it): the
-       action is a plain text button.
+     - No hand-built App Store or Google Play badge (Apple forbids recreating
+       its badge, and the CSP allows no third-party artwork): each action is a
+       plain text button, the two side by side as .store siblings.
+     - Sync is iPhone, iPad and Mac only. Android keeps its own library and
+       moves it by an exported archive; that is said once, in the
+       "everywhere" tile, and never implied anywhere else.
      - Every price comes from content/site.json. The When tile's times are
        resolved in the visitor's own clock by assets/js/ledger.js.
      - This page makes cross-device claims, so it is named in
@@ -94,13 +98,18 @@
        =================================================================== -->
   <section class="hero">
     <div class="wrap">
-      <p class="pill"><svg aria-hidden="true"><use href="#m"/></svg><span>For iPhone, iPad and Mac</span></p>
+      <p class="pill"><svg aria-hidden="true"><use href="#m"/></svg><span>For iPhone, iPad, Mac and Android</span></p>
       <h1><span>Save anything.</span> <span>Laytr reminds you when.</span></h1>
       <p class="lede">Links, recipes, videos, screenshots and PDFs from any app, in one place. Pick a day and Laytr reminds you.</p>
       <div class="cta">
-        
-        <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8"><svg aria-hidden="true"><use href="#m"/></svg>Get Laytr on the App&nbsp;Store</a>
-        
+        <div class="stores">
+          
+          <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8"><svg aria-hidden="true"><use href="#m"/></svg>Get Laytr on the App&nbsp;Store</a>
+          
+          
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.laytr.app"><svg aria-hidden="true"><use href="#m"/></svg>Get Laytr on Google&nbsp;Play</a>
+          
+        </div>
         <p class="cta-note">Free to start. No account, ever.</p>
       </div>
     </div>
@@ -256,6 +265,7 @@
             <h3>One library on iPhone, iPad and Mac.</h3>
             <p>Save on your phone, read it on your Mac. Sync runs through your own iCloud, free on every plan.</p>
             <ul class="devchips" aria-label="Devices"><li>iPhone</li><li>iPad</li><li>Mac</li></ul>
+            <p>On Android, Laytr keeps its own library on your phone or tablet. It doesn&rsquo;t sync, so to move a library between Android and Apple devices, you export it on one and import it on the other.</p>
           </div>
           <div class="devices" aria-hidden="true">
             <div class="mac"><div class="bar"><i></i><i></i><i></i></div><img src="/assets/shots/mac-library.webp" alt="" width="1800" height="1125" loading="lazy"></div>
@@ -267,7 +277,7 @@
         <article class="tile t-paper s4 private rv" id="private">
           <p class="home-eyebrow">Private by design</p>
           <h3>No account. No server of ours.</h3>
-          <p>Your saves live on your devices and in your own iCloud. We can&rsquo;t read them.</p>
+          <p>Your saves live on your devices, and on Apple devices in your own iCloud. We can&rsquo;t read them.</p>
           <div class="points">
             <div class="point"><div class="dot"><svg aria-hidden="true"><use href="#m"/></svg></div><b>No sign-up</b><p>Open the app and save.</p></div>
             <div class="point"><div class="dot"><svg aria-hidden="true"><use href="#m"/></svg></div><b>Nothing passes through us</b><p>There is no Laytr server.</p></div>
@@ -296,6 +306,7 @@
             <li><b>Mac</b><span>Save from Safari or the menu bar.</span></li>
             <li><b>Sync</b><span>One library, through your iCloud.</span></li>
             <li><b>Imports</b><span>Pocket, Instapaper, Omnivore.</span></li>
+            <li><b>Android</b><span>Phones and tablets, on Google Play.</span></li>
           </ul>
         </article>
       </div>
@@ -313,7 +324,7 @@
       <div class="head">
         <p class="home-eyebrow">Languages</p>
         <h2 id="languages-t" class="rv">Laytr now speaks seven languages.</h2>
-        <p class="lede rv">On iPhone and iPad, from version 1.0.13. Each card is the app in that language, in its own words.</p>
+        <p class="lede rv">On iPhone, iPad and Android. Each card is the app in that language, in its own words.</p>
       </div>
 
       <ul class="langs">
@@ -447,7 +458,7 @@
       </div>
 
       <p class="fine">
-        The launch price for Lifetime runs until 31 December 2026. Prices are U.S. dollars. Your local price is set by the App Store and shown before you buy.
+        The launch price for Lifetime runs until 31 December 2026. Prices are U.S. dollars and the same on the App Store and Google Play. Your local price is set by the store and shown before you buy.
       </p>
     </div>
   </section>
@@ -463,7 +474,7 @@
       </div>
       <div class="faqcols">
         <div>
-          <details><summary>Do I need an account?</summary><p>No. Sync uses the Apple Account you&rsquo;re already signed in to.</p></details>
+          <details><summary>Do I need an account?</summary><p>No. On iPhone, iPad and Mac, sync uses the Apple Account you&rsquo;re already signed in to.</p></details>
           <details><summary>Does it save the whole article?</summary><p>Yes. The full text and pictures, so it still opens after the page is gone.</p></details>
           <details><summary>Does Laytr download videos?</summary><p>No. A video is saved as a link with its title and picture.</p></details>
         </div>
@@ -471,7 +482,7 @@
           <details><summary>Does it get around paywalls?</summary><p>No, never.</p></details>
           <details><summary>Is there AI or auto-tagging?</summary><p>Not in this version. Laytr files things the way you tell it to.</p></details>
           <details><summary>What happens if I stop paying?</summary><p>Nothing is deleted, hidden or locked. Only adding pauses above 30 saves.</p></details>
-          <details><summary>Which languages does Laytr speak?</summary><p>English, German, French, Spanish, Arabic, Italian and Portuguese (Brazil) on iPhone and iPad. The Mac app is in English.</p></details>
+          <details><summary>Which languages does Laytr speak?</summary><p>English, German, French, Spanish, Arabic, Italian and Portuguese (Brazil) on iPhone, iPad and Android. The Mac app is in English.</p></details>
         </div>
       </div>
       <p class="fine">More answers on the <a href="/support">support page</a>.</p>
@@ -481,15 +492,20 @@
   <!-- ===================================================================
        Final
        =================================================================== -->
-  <section class="sec" aria-labelledby="final-t">
+  <section class="sec" id="get" aria-labelledby="final-t">
     <div class="wrap">
       <div class="finalpanel onlime rv">
         <svg class="bigmark" aria-hidden="true"><use href="#m"/></svg>
         <h2 id="final-t">Save now. Come back Laytr.</h2>
-        <p>Free on the App Store for iPhone, iPad and Mac.</p>
-        
-        <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8"><svg aria-hidden="true"><use href="#m"/></svg>Get Laytr on the App&nbsp;Store</a>
-        
+        <p>On the App Store and Google Play.</p>
+        <div class="stores">
+          
+          <a class="store" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8"><svg aria-hidden="true"><use href="#m"/></svg>Get Laytr on the App&nbsp;Store</a>
+          
+          
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.laytr.app"><svg aria-hidden="true"><use href="#m"/></svg>Get Laytr on Google&nbsp;Play</a>
+          
+        </div>
       </div>
     </div>
   </section>
@@ -506,8 +522,11 @@
   <rect x="471.99" y="25.00" width="13.20" height="66.00" rx="6.60" transform="rotate(120.0 478.59 58.00)" fill="var(--laytr-mark)"/>
 </svg></span>
         <p class="headline">Save now. Come back Laytr.</p>
-        <p class="footnote muted measure">For iPhone, iPad and Mac. Made by a small independent team, with no Laytr account and no Laytr server.</p>
-        <p><a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a></p>
+        <p class="footnote muted measure">For iPhone, iPad, Mac and Android. Made by a small independent team, with no Laytr account and no Laytr server.</p>
+        <div class="btn-row">
+          <a class="btn btn--mark" href="https://apps.apple.com/app/apple-store/id6803512999?pt=123765570&amp;ct=website&amp;mt=8">Get Laytr on the App&nbsp;Store</a>
+          <a class="btn btn--mark" href="https://play.google.com/store/apps/details?id=com.laytr.app">Get Laytr on Google&nbsp;Play</a>
+        </div>
       </div>
 
       <div>
@@ -545,11 +564,12 @@
 
       <p class="footnote muted">&copy; 2026 Waitery Inc.</p>
       <p class="footnote muted">Apple, iPhone, iPad, Mac, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries. Laytr is not affiliated with, endorsed by, or sponsored by Apple Inc.</p>
+      <p class="footnote muted">Android and Google Play are trademarks of Google LLC.</p>
     </div>
   </div>
 </footer>
-<script src="/assets/js/ledger.js?v=53173b57c263" defer></script>
-<script src="/assets/js/home.js?v=53173b57c263" defer></script>
+<script src="/assets/js/ledger.js?v=9bdda0fbf39e" defer></script>
+<script src="/assets/js/home.js?v=9bdda0fbf39e" defer></script>
 </body>
 </html>
 
